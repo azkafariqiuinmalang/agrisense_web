@@ -1,4 +1,4 @@
-﻿# AgriSense Web
+# AgriSense Web
 
 Landing page berbahasa Indonesia untuk memperkenalkan prototipe asisten budidaya melon di greenhouse bermedia tanah.
 
@@ -87,7 +87,7 @@ Mengisi konfigurasi tidak mengimplementasikan backend. Label fitur hanya boleh d
 
 Pada pembaruan ini, lint, TypeScript, dan build produksi lokal lulus. Audit runtime melaporkan 0 temuan; audit lengkap melaporkan 5 temuan tinggi pada rantai tooling ESLint. Rincian dan batas hasil ada di [laporan validasi](docs/redesign-validation.md).
 
-Working tree berada di `feature/material-expressive-redesign` dengan perubahan yang belum dikomit. Referensi lokal `main` dan `origin/main` masih menunjuk `ca6707a`, snapshot landing page awal. Redesign terbaru belum dipush dalam pekerjaan ini; deployment publik belum diverifikasi.
+Pada 13 Oktober 2026, redesign, demo iPhone, aset, dan dokumentasi berhasil dipush ke `origin/main` pada [commit implementasi `06956ea`](https://github.com/Rafiqalha/agrisense-web/commit/06956ea). Branch lokal sekarang `main`. Pembaruan catatan publikasi berada pada commit dokumentasi berikutnya; lihat [riwayat main](https://github.com/Rafiqalha/agrisense-web/commits/main). Push GitHub tidak membuktikan deployment publik sudah berjalan; deployment belum diverifikasi.
 
 ## Lisensi dan aset
 

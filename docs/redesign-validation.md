@@ -1,4 +1,4 @@
-﻿# Validasi AgriSense Web
+# Validasi AgriSense Web
 
 Diperbarui 13 Oktober 2026. Laporan ini memisahkan pemeriksaan working tree terbaru dari pengujian milestone sebelumnya. Hasil beberapa suite tidak dijumlahkan karena cakupannya tumpang tindih.
 
@@ -37,7 +37,7 @@ npm menyarankan `eslint-config-next@14.2.35` sebagai perubahan major/downgrade. 
 
 ## Pengujian demo terbaru: 32/32
 
-Hasil mentah: [iphone-current-32.json](evidence/iphone-current-32.json). [Konteks run dan hash source terpilih](evidence/current-run-context.json) mencatat lingkungan serta hash setelah run; HEAD Git saja tidak mewakili source yang diuji karena redesign belum dikomit. Hash tersebut tidak berlaku untuk hasil milestone historis.
+Hasil mentah: [iphone-current-32.json](evidence/iphone-current-32.json). [Konteks run dan hash source terpilih](evidence/current-run-context.json) mencatat lingkungan serta hash setelah run; Pada saat run, HEAD Git saja tidak mewakili source yang diuji karena redesign saat itu belum dikomit. Implementasi kemudian dipublikasikan pada commit `06956ea`; hash dan HEAD dalam konteks run tetap merupakan catatan historis sebelum commit/push. Hash tersebut tidak berlaku untuk hasil milestone historis.
 
 Script smoke dijalankan dari direktori temporary lingkungan pengembangan, memakai Playwright dari cache alat. Script bukan bagian repo dan belum terpasang sebagai `npm test`/CI; hasil tersimpan ini merupakan bukti run, bukan test suite yang otomatis dapat diulang dari clone bersih.
 

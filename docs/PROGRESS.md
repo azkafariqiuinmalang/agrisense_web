@@ -1,4 +1,4 @@
-﻿# Progres AgriSense Web
+# Progres AgriSense Web
 
 Diperbarui 13 Oktober 2026, berdasarkan dokumentasi proyek, kode working tree, status Git lokal, dan pemeriksaan pada sesi pengembangan ini.
 
@@ -8,15 +8,15 @@ Tidak digunakan persentase penyelesaian karena belum ada baseline pekerjaan back
 
 ## Milestone
 
-| Tahap               | Hasil aktual                                                                         | Status                                                                       |
-| ------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
-| Landing page awal   | Section, copy Indonesia, konfigurasi fakta bisnis, foto dan atribusi                 | Snapshot Git `ca6707a`                                                       |
-| Publikasi awal      | Remote GitHub disetel dan snapshot awal dipush ke `main` pada sesi sebelumnya        | Referensi lokal `origin/main` masih `ca6707a`; remote live tidak dicek ulang |
-| Redesign Material   | Google Sans lokal, SVG Material Symbols, warna HCT, layout responsif, GSAP dan Lenis | Ada di working tree; belum dikomit                                           |
-| Demo iPhone         | Frame CSS/SVG realistis, UI chat familiar, empat tahap dan interaksi preset          | Ada; simulasi frontend                                                       |
-| Revisi mouse        | Ring, titik biru, glow follower dihapus; cursor native                               | Ada di source terbaru                                                        |
-| Revisi hero         | Dua kolom rapi, satu foto, sedikit ikon, tanpa chat overlay/dekorasi hero lama       | Ada di source terbaru                                                        |
-| Dokumentasi terkini | Status, batas fitur, validasi, sumber aset, kebutuhan rilis diperjelas               | Pembaruan dokumentasi ini                                                    |
+| Tahap               | Hasil aktual                                                                         | Status                                                             |
+| ------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Landing page awal   | Section, copy Indonesia, konfigurasi fakta bisnis, foto dan atribusi                 | Snapshot Git `ca6707a`                                             |
+| Publikasi awal      | Remote GitHub disetel dan snapshot awal dipush ke `main` pada sesi sebelumnya        | Snapshot awal `ca6707a`; sudah dilanjutkan oleh publikasi redesign |
+| Redesign Material   | Google Sans lokal, SVG Material Symbols, warna HCT, layout responsif, GSAP dan Lenis | Dikomit dan dipush ke main pada `06956ea`                          |
+| Demo iPhone         | Frame CSS/SVG realistis, UI chat familiar, empat tahap dan interaksi preset          | Ada; simulasi frontend                                             |
+| Revisi mouse        | Ring, titik biru, glow follower dihapus; cursor native                               | Ada di source terbaru                                              |
+| Revisi hero         | Dua kolom rapi, satu foto, sedikit ikon, tanpa chat overlay/dekorasi hero lama       | Ada di source terbaru                                              |
+| Dokumentasi terkini | Status, batas fitur, validasi, sumber aset, kebutuhan rilis diperjelas               | Pembaruan dokumentasi ini                                          |
 
 ## Matriks kemampuan
 
@@ -62,11 +62,11 @@ Bukti browser berasal dari milestone berbeda. Hasil 36, 32, dan 21 pemeriksaan t
 ## Git dan rilis
 
 - Repository: [Rafiqalha/agrisense-web](https://github.com/Rafiqalha/agrisense-web).
-- Branch kerja: `feature/material-expressive-redesign`.
-- HEAD: `ca6707a2863402713b1b74b78d2ee1523910208c`.
-- Referensi lokal `main` dan `origin/main`: commit yang sama.
-- Ada perubahan tracked dan berkas baru yang belum dikomit, termasuk komponen demo, font, ikon, token, bukti, dan dokumentasi.
-- Pemeriksaan referensi lokal bukan pembacaan langsung remote. Tidak ada commit, push, merge, atau deploy baru dalam pembaruan dokumentasi ini.
+- Branch pengembangan: `feature/material-expressive-redesign`; branch lokal saat publikasi: `main`.
+- Commit implementasi: [`06956ea`](https://github.com/Rafiqalha/agrisense-web/commit/06956ea), berisi redesign, demo, aset, dokumentasi, dan bukti verifikasi.
+- Pada 13 Oktober 2026, fetch memastikan remote belum bergerak dari snapshot awal; main kemudian dimajukan dengan fast-forward dan push tanpa force berhasil.
+- Seluruh perubahan implementasi yang diperiksa sudah masuk commit publikasi. Catatan status Git ini diperbarui melalui commit dokumentasi lanjutan; lihat [riwayat main](https://github.com/Rafiqalha/agrisense-web/commits/main) untuk HEAD terbaru.
+- Saat pengujian browser dan pembaruan dokumentasi awal, source masih belum dikomit dan HEAD masih `ca6707a`. Nilai branch/HEAD pada bukti JSON adalah konteks historis run tersebut. Publikasi ke GitHub dilakukan setelah pengguna meminta push ke main; deployment belum diverifikasi.
 
 Screenshot dokumentasi dapat menunjukkan revisi berbeda. Preview hero terbaru adalah referensi hero saat ini; screenshot redesign awal tetap diberi label historis.
 

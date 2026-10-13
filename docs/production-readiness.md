@@ -1,4 +1,4 @@
-﻿# Kesiapan produksi
+# Kesiapan produksi
 
 Penilaian per 13 Oktober 2026 terhadap working tree lokal. “Build lulus” dan “layanan siap produksi” memiliki kriteria berbeda.
 
@@ -28,7 +28,7 @@ Landing page informasi tidak harus memiliki backend. Backend diperlukan jika ril
 
 | Area                  | Kondisi sekarang                                                        | Tindakan dan kriteria penerimaan                                                                                        |
 | --------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Snapshot rilis        | Redesign masih perubahan lokal, sejumlah aset/komponen belum tracked    | Commit snapshot lengkap; build ulang dari checkout bersih sebelum rilis                                                 |
+| Snapshot rilis        | Snapshot lengkap sudah dikomit dan dipush ke main pada `06956ea`        | Build ulang dari checkout bersih pada host target; push GitHub belum membuktikan deployment                             |
 | Hosting/domain        | Domain config kosong; deployment tidak diverifikasi                     | Tentukan host dan domain; cek URL HTTPS, route/aset, navigasi dan fallback pada host itu                                |
 | Klaim produk          | Copy manfaat masih bernuansa layanan, dengan label/disclaimer prototipe | Review seluruh copy agar manfaat yang direncanakan tidak dibaca sebagai layanan aktif                                   |
 | Kontak/pilot          | Kanal kosong, pilot tertutup                                            | Publikasi informasi boleh mempertahankan pilot tertutup; jika dibuka, butuh kanal resmi dan kesiapan operasional nyata  |
