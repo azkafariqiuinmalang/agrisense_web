@@ -1,6 +1,24 @@
 ﻿# Desain AgriSense
 
-Status implementasi per 13 Oktober 2026. Dokumen ini menjelaskan desain yang ada pada working tree, bukan janji kemampuan layanan.
+## Landing page aktif: adaptasi Google Stitch
+
+Revisi 13 Oktober 2026 mengganti route `/` dengan desain dari project **Custom Design System**, screen `6b95ef9e7b5740709092fa5388ac66e2` pada project `10451069147770532943`. Ekspor referensi disimpan di `docs/stitch-reference/`; implementasi React berada di `components/stitch/`.
+
+Komposisi mempertahankan header pill mengambang, hero foto greenhouse dengan overlay hijau, ilustrasi tangan dan melon, tiga kartu langkah, simulator chat, informasi AI, kepercayaan, FAQ, CTA hijau gelap, dan footer. Font Plus Jakarta Sans variable 400–800 disajikan lokal dengan lisensi OFL. Logo asli pengguna dari `LOGO AGRISENSE.jpg` digunakan di header, footer, dan avatar chat melalui komponen bersama `BrandGlyph`. Salinan `public/images/agrisense-logo.jpg` identik dengan sumber; framing CSS menjaga proporsi dan mengurangi margin putih tanpa mengubah gambar. Placeholder SVG lama diganti, termasuk untuk komponen demo sebelumnya. Watermark placeholder pada CTA dihapus.
+
+Skill **UI/UX Pro Max** digunakan untuk hierarki CTA, tipografi fluid, menu mobile native dengan Escape, focus-visible, gambar responsif, dan reduced motion. Simulator otomatis mengulang delapan pesan contoh ketika terlihat, tanpa tombol play/reset/langkah. Ringkasan draft ditahan lebih lama sebelum contoh balasan YA; hasil akhir ditahan sebelum siklus berikutnya. Tidak ada pesan WhatsApp atau penulisan database nyata. Copy membedakan pengembangan/uji lokal dari layanan publik, serta tidak menjanjikan diagnosis pasti atau persetujuan KUR. Nomor WhatsApp publik yang belum dikonfigurasi mengarahkan CTA ke simulator.
+
+`LandingMotion` mengelola reveal dari atas ke bawah (18px/520ms), stagger kartu 90ms, parallax pendek pada hero/ilustrasi melon, dan indikator progres scroll. Memakai Web Animations, IntersectionObserver, serta requestAnimationFrame tanpa mengaktifkan engine GSAP/Lenis lama atau mengambil alih native scroll. HTML awal tetap terbaca; hanya elemen di bawah viewport disiapkan setelah hydration, dan elemen fokus langsung ditampilkan. Observer, timer, listener, dan animasi dibersihkan saat unmount/perubahan preferensi motion.
+
+Demo berhenti sementara di luar viewport, saat tab tidak aktif, saat fokus keyboard berada di dalamnya, atau ketika opsi **Hentikan animasi** dicentang. Reduced motion menampilkan percakapan lengkap tanpa autoplay/parallax/reveal. Transcript statis bisa dibuka kapan pun dan perubahan otomatis tidak diumumkan berulang melalui live region. Login, dashboard, API session, cookie, dan integrasi backend tidak diubah. Komponen landing lama dipertahankan sebagai referensi; uraian di bawah bagian ini merupakan dokumentasi implementasi sebelumnya, bukan komposisi route `/` yang sekarang.
+
+Validasi dasar sebelumnya: lint, TypeScript, dan production build lulus; browser diperiksa pada lebar 375, 768, 1024, dan 1440px tanpa overflow horizontal. Menu mobile, FAQ, dan akses login diuji. Revisi motion/autoloop juga lulus lint komponen serta production build; perkembangan pesan otomatis, indikator scroll/header, dan opsi jeda diperiksa pada browser produksi. Reduced motion didukung di kode, tetapi belum diuji melalui pengaturan perangkat fisik. Pengujian ini bukan audit WCAG menyeluruh atau verifikasi kanal WhatsApp produksi.
+
+Konfigurasi pemrosesan Tailwind kini mengecualikan `*.module.css` agar ekspor kelas CSS Module tidak hilang. Aset hero/melon berasal dari referensi pengguna dan diberi label ilustrasi; foto daun contoh tetap memakai sumber serta lisensi yang tercatat di `siteConfig.attribution`.
+
+## Dokumentasi desain sebelumnya
+
+Status implementasi sebelumnya per 13 Oktober 2026. Bagian historis berikut bukan janji kemampuan layanan.
 
 ## Identitas dan batas klaim
 

@@ -1,54 +1,42 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
 
 /**
  * AgriSense brand mark.
  *
- * The identity is still a pre-launch placeholder (DESIGN.md §15): a seedling —
- * two leaves and a stem — drawn as plain SVG so it stays crisp at every size
- * and never depends on a stock asset. Swap in the licensed brand file when it
- * exists; the wordmark width is stable, so nothing reflows.
+ * User-provided LOGO AGRISENSE.jpg, preserved unchanged in public/images.
+ * White backing matches the source JPEG. CSS frames its generous outer margin
+ * without changing the artwork or stretching its aspect ratio.
  */
-export function LeafGlyph({ className = "" }: { className?: string }) {
+export function BrandGlyph({ className = "" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 32 32"
+    <span
       aria-hidden="true"
-      focusable="false"
       className={className}
+      style={{ display: "inline-block", overflow: "hidden", background: "#fff", borderRadius: "inherit", flexShrink: 0, aspectRatio: "1" }}
     >
-      <g fill="currentColor">
-        <ellipse
-          cx="20.2"
-          cy="13.8"
-          rx="4.6"
-          ry="2.4"
-          transform="rotate(-35 20.2 13.8)"
-        />
-        <ellipse
-          cx="11.8"
-          cy="13.8"
-          rx="4.6"
-          ry="2.4"
-          transform="rotate(35 11.8 13.8)"
-        />
-      </g>
-      <path
-        d="M16 27V12.5"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
+      <Image
+        src="/images/agrisense-logo.jpg"
+        alt=""
+        width={1254}
+        height={1254}
+        sizes="48px"
+        style={{ display: "block", width: "100%", height: "100%", objectFit: "contain", transform: "scale(1.4)" }}
       />
-    </svg>
+    </span>
   );
 }
+
+/** Backward-compatible name for the earlier demo components. */
+export const LeafGlyph = BrandGlyph;
 
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <span
       aria-hidden="true"
-      className={`flex shrink-0 items-center justify-center rounded-[15px] bg-primary ${className}`}
+      className={`flex shrink-0 items-center justify-center rounded-[15px] bg-white ${className}`}
     >
-      <LeafGlyph className="size-[62%] text-white" />
+      <BrandGlyph className="size-full" />
     </span>
   );
 }

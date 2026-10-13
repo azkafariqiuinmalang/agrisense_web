@@ -21,6 +21,12 @@ Landing page berbahasa Indonesia untuk memperkenalkan prototipe asisten budidaya
 
 ## Menjalankan proyek
 
+Integrasi petani tersedia pada `/login` dan `/dashboard`, menggunakan kode
+sekali pakai dari perintah WhatsApp `LOGIN`. Dashboard membaca backend melalui
+server Next.js, bukan langsung ke database. Konfigurasi, batasan, dan pengujian:
+[integrasi backend](docs/backend-integration.md). Landing/demo publik tetap
+terpisah dan tidak berubah menjadi simulasi dashboard.
+
 Diperlukan Node.js minimal 20.9 menurut panduan yang disertakan dalam paket Next.js terpasang. Lingkungan verifikasi saat ini: Windows, Node.js 24.19.0, npm 11.17.0. Versi minimum tersebut belum diuji khusus di proyek ini.
 
 ```sh

@@ -1,0 +1,850 @@
+/* ==========================================================================
+   AgriSense Premium Login Page - Modern WhatsApp Authentication UI/UX
+   ========================================================================== */
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f4faf6;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(220, 252, 231, 0.7) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(209, 250, 229, 0.6) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(240, 253, 244, 0.5) 0px, transparent 100%);
+  color: #1f2937;
+  font-family: inherit;
+  padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.header {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 0 0.75rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.backLink:hover {
+  color: #124e33;
+  transform: translateX(-3px);
+}
+
+.backIcon {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.backLink:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+.headerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  justify-self: center;
+}
+
+.headerLogoTile {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.headerBrandText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Layout
+   -------------------------------------------------------------------------- */
+.mainContainer {
+  max-width: 1140px;
+  width: 100%;
+  margin: 1rem auto 2rem;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Information & Value Props
+   -------------------------------------------------------------------------- */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-right: 1rem;
+}
+
+.authBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 9999px;
+  color: #047857;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.authBadgeIcon {
+  width: 0.95rem;
+  height: 0.95rem;
+  color: #059669;
+}
+
+.mainHeadline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111827;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.mainSubtitle {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+  max-width: 480px;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.featureItem:hover {
+  transform: translateX(4px);
+}
+
+.featureIconTile {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.75rem;
+  background-color: #dcfce7;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  box-shadow: 0 1px 2px rgba(21, 128, 61, 0.08);
+}
+
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.featureTitle {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.featureDescription {
+  font-size: 0.825rem;
+  line-height: 1.45;
+  color: #6b7280;
+  margin: 0;
+}
+
+.infoNoticeCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background-color: #e5f6eb;
+  border: 1px solid #c7eed3;
+  border-radius: 1rem;
+  padding: 0.85rem 1.15rem;
+  margin-top: 0.35rem;
+}
+
+.infoNoticeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  color: #15803d;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoNoticeText {
+  font-size: 0.835rem;
+  line-height: 1.45;
+  color: #1b4332;
+  margin: 0;
+}
+
+.infoNoticeText strong {
+  font-weight: 600;
+  color: #0f2e21;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Form Card
+   -------------------------------------------------------------------------- */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardContainer {
+  width: 100%;
+  max-width: 470px;
+  background: #ffffff;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow:
+    0 20px 45px -15px rgba(18, 59, 42, 0.09),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 1.85rem 1.85rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.cardContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c99a3e 0%, #eab308 50%, #c99a3e 100%);
+  border-top-left-radius: 1.75rem;
+  border-top-right-radius: 1.75rem;
+}
+
+.cardContainer:hover {
+  box-shadow:
+    0 25px 50px -15px rgba(18, 59, 42, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.15rem;
+}
+
+.cardLogoBadge {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.875rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 2px 5px rgba(22, 163, 74, 0.08);
+}
+
+.cardTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.cardSubtitle {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+  max-width: 380px;
+}
+
+/* --------------------------------------------------------------------------
+   Pill Tabs Switcher
+   -------------------------------------------------------------------------- */
+.tabSwitcher {
+  display: flex;
+  background: #e9f3ec;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabButton {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.815rem;
+  font-weight: 500;
+  color: #4b5563;
+  background: transparent;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tabButtonActive {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+}
+
+/* --------------------------------------------------------------------------
+   Step 1: Phone Input Block
+   -------------------------------------------------------------------------- */
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fieldLabel {
+  font-size: 0.815rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.registeredBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.phoneInputGroup {
+  display: flex;
+  align-items: center;
+  background: #edf7ef;
+  border: 1px solid #d1fae5;
+  border-radius: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.phoneInputGroup:focus-within {
+  border-color: #10b981;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.countryBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.55rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  border-right: 1px solid #d1fae5;
+  user-select: none;
+}
+
+.flagIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.phoneInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  color: #111827;
+  font-family: inherit;
+  outline: none;
+}
+
+.phoneInput::placeholder {
+  color: #9ca3af;
+}
+
+.fieldHelperText {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.sendOtpButton {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #0f5132;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(15, 81, 50, 0.15);
+  margin-top: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.sendOtpButton:hover:not(:disabled) {
+  background-color: #0a4026;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(15, 81, 50, 0.22);
+}
+
+.sendOtpButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sendOtpButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   Step 2: OTP Input Block
+   -------------------------------------------------------------------------- */
+.otpSectionBox {
+  background: #fbfdfb;
+  border: 1px solid #e2ede5;
+  border-radius: 1rem;
+  padding: 1.25rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.otpHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.otpTitleWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.815rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.prdBadge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+/* 6-Digit OTP Box Grid */
+.otpInputsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.otpDigitBox {
+  width: 100%;
+  aspect-ratio: 1;
+  max-height: 3.25rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.65rem;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.otpDigitBox:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  background: #ffffff;
+}
+
+.otpDigitBoxFilled {
+  border-color: #94a3b8;
+  background: #ffffff;
+}
+
+/* Timer and Resend row */
+.timerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.775rem;
+}
+
+.timerLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.resendButton {
+  background: none;
+  border: none;
+  color: #047857;
+  font-size: 0.775rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.resendButton:hover:not(:disabled) {
+  color: #065f46;
+}
+
+.resendButton:disabled {
+  color: #94a3b8;
+  text-decoration: none;
+  cursor: default;
+}
+
+/* Warning alert */
+.securityWarningCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.warningIcon {
+  color: #ea580c;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.warningText {
+  font-size: 0.735rem;
+  line-height: 1.45;
+  color: #9a3412;
+  margin: 0;
+}
+
+/* Submit Button */
+.verifySubmitButton {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #1b6843;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.95rem 1.25rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 10px rgba(27, 104, 67, 0.2);
+}
+
+.verifySubmitButton:hover:not(:disabled) {
+  background-color: #14532d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(27, 104, 67, 0.28);
+}
+
+.verifySubmitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.verifySubmitButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card bottom links */
+.cardSubLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.785rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.subLink {
+  color: #4b5563;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.subLink:hover {
+  color: #111827;
+  text-decoration: underline;
+}
+
+.subLinkDivider {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+/* Bottom card trust note */
+.cardTrustNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #475569;
+  text-align: center;
+  margin-top: 1.25rem;
+  max-width: 440px;
+}
+
+.cardTrustIcon {
+  color: #059669;
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Error message banner */
+.errorBanner {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.65rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hex Token Indicator (Bonus UX for compatibility with 64-char WhatsApp hex token) */
+.tokenDetectedBanner {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.55rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   Page Footer
+   -------------------------------------------------------------------------- */
+.footerContainer {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.footerVerifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.footerLinksRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.footerLink {
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footerLink:hover {
+  color: #111827;
+  text-decoration: underline;
+}
+
+.footerCopyright {
+  font-size: 0.76rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .mainContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 1rem auto 2.5rem;
+  }
+
+  .leftColumn {
+    padding-right: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .mainHeadline {
+    font-size: 2.2rem;
+  }
+
+  .mainSubtitle {
+    max-width: 100%;
+  }
+
+  .featuresList {
+    text-align: left;
+    width: 100%;
+  }
+
+  .infoNoticeCard {
+    text-align: left;
+    width: 100%;
+  }
+
+  .cardContainer {
+    max-width: 100%;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .backLink {
+    margin: 0 auto;
+  }
+
+  .headerBrand {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageWrapper {
+    padding: 0 0.85rem;
+  }
+
+  .cardContainer {
+    padding: 1.5rem 1.15rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .mainHeadline {
+    font-size: 1.85rem;
+  }
+
+  .otpInputsGrid {
+    gap: 0.35rem;
+  }
+
+  .otpDigitBox {
+    font-size: 1.15rem;
+    border-radius: 0.5rem;
+  }
+
+  .footerLinksRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
