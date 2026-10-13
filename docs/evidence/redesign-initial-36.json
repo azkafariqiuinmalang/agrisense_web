@@ -1,0 +1,159 @@
+[
+  {
+    "name": "motion initialized",
+    "pass": true
+  },
+  {
+    "name": "font loaded",
+    "pass": true
+  },
+  {
+    "name": "headline preserved",
+    "pass": true
+  },
+  {
+    "name": "cursor follows pointer",
+    "pass": true
+  },
+  {
+    "name": "magnetic button moves",
+    "pass": true
+  },
+  {
+    "name": "smooth wheel interpolation",
+    "pass": true,
+    "data": {
+      "intermediate": 167,
+      "settled": 550
+    }
+  },
+  {
+    "name": "smooth desktop anchor navigation",
+    "pass": true,
+    "data": {
+      "hash": "#demo",
+      "top": 111.625
+    }
+  },
+  {
+    "name": "demo stage 1",
+    "pass": true
+  },
+  {
+    "name": "demo stage 2",
+    "pass": true
+  },
+  {
+    "name": "demo stage 3",
+    "pass": true
+  },
+  {
+    "name": "demo stage 4",
+    "pass": true
+  },
+  {
+    "name": "demo keyboard-compatible selection",
+    "pass": true
+  },
+  {
+    "name": "card tilt and spotlight",
+    "pass": true
+  },
+  {
+    "name": "all scrolled content revealed",
+    "pass": true
+  },
+  {
+    "name": "all images loaded",
+    "pass": true
+  },
+  {
+    "name": "anchor targets valid",
+    "pass": true
+  },
+  {
+    "name": "FAQ opens",
+    "pass": true
+  },
+  {
+    "name": "responsive width 320",
+    "pass": true
+  },
+  {
+    "name": "responsive width 390",
+    "pass": true
+  },
+  {
+    "name": "responsive width 768",
+    "pass": true
+  },
+  {
+    "name": "responsive width 1024",
+    "pass": true
+  },
+  {
+    "name": "responsive width 1440",
+    "pass": true
+  },
+  {
+    "name": "responsive width 1920",
+    "pass": true
+  },
+  {
+    "name": "touch cursor disabled",
+    "pass": true
+  },
+  {
+    "name": "desktop CTA hidden on mobile",
+    "pass": true
+  },
+  {
+    "name": "mobile dialog opens",
+    "pass": true
+  },
+  {
+    "name": "background inert",
+    "pass": true
+  },
+  {
+    "name": "mobile focus trap",
+    "pass": true
+  },
+  {
+    "name": "menu escape cleanup",
+    "pass": true
+  },
+  {
+    "name": "mobile menu anchor works",
+    "pass": true,
+    "data": {
+      "hash": "#pilot",
+      "top": 100.28125
+    }
+  },
+  {
+    "name": "menu closes on desktop resize",
+    "pass": true
+  },
+  {
+    "name": "no JS readable and navigable",
+    "pass": true
+  },
+  {
+    "name": "blocked JS readable and navigable",
+    "pass": true
+  },
+  {
+    "name": "reduced motion disables animation",
+    "pass": true
+  },
+  {
+    "name": "live reduced motion cleanup",
+    "pass": true
+  },
+  {
+    "name": "no runtime errors",
+    "pass": true,
+    "data": []
+  }
+]

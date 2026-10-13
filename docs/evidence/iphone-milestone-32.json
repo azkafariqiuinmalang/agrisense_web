@@ -1,0 +1,142 @@
+[
+  {
+    "name": "initial two-message exchange",
+    "pass": true
+  },
+  {
+    "name": "iphone fully fits desktop viewport",
+    "pass": true,
+    "data": {
+      "x": 845.046875,
+      "y": 112.40625,
+      "width": 325.90625,
+      "height": 671.96875
+    }
+  },
+  {
+    "name": "send starts typing indicator",
+    "pass": true
+  },
+  {
+    "name": "send disabled during reply",
+    "pass": true
+  },
+  {
+    "name": "send advances one stage",
+    "pass": true
+  },
+  {
+    "name": "photo and reply shown",
+    "pass": true
+  },
+  {
+    "name": "photo loads",
+    "pass": true
+  },
+  {
+    "name": "bubbles stay fully visible",
+    "pass": true
+  },
+  {
+    "name": "photo preview opens",
+    "pass": true
+  },
+  {
+    "name": "photo preview Escape closes",
+    "pass": true
+  },
+  {
+    "name": "back opens chat list",
+    "pass": true
+  },
+  {
+    "name": "chat list reopens conversation",
+    "pass": true
+  },
+  {
+    "name": "activity draft step",
+    "pass": true
+  },
+  {
+    "name": "confirmation step and complete history",
+    "pass": true
+  },
+  {
+    "name": "native chat scrolling stays inside phone",
+    "pass": true,
+    "data": {
+      "top": 40,
+      "height": 467,
+      "total": 687
+    }
+  },
+  {
+    "name": "composer replay resets demo",
+    "pass": true
+  },
+  {
+    "name": "attachment picker opens",
+    "pass": true
+  },
+  {
+    "name": "attachment picker sends photo example",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 320",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 390",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 768",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1024",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1440",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1920",
+    "pass": true
+  },
+  {
+    "name": "phone rendered on mobile",
+    "pass": true
+  },
+  {
+    "name": "mobile send works",
+    "pass": true
+  },
+  {
+    "name": "Enter sends guided message",
+    "pass": true
+  },
+  {
+    "name": "reduced motion controls remain functional",
+    "pass": true
+  },
+  {
+    "name": "no JS phone readable",
+    "pass": true
+  },
+  {
+    "name": "full transcript works without JS",
+    "pass": true
+  },
+  {
+    "name": "blocked scripts retain readable demo",
+    "pass": true
+  },
+  {
+    "name": "no runtime errors",
+    "pass": true,
+    "data": []
+  }
+]

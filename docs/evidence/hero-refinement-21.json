@@ -1,0 +1,87 @@
+[
+  {
+    "name": "headline retained",
+    "pass": true
+  },
+  {
+    "name": "one hero icon",
+    "pass": true
+  },
+  {
+    "name": "decorative overlays removed",
+    "pass": true
+  },
+  {
+    "name": "hero photo loaded",
+    "pass": true
+  },
+  {
+    "name": "photo and heading alignment",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 320",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 320",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 390",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 390",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 768",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 768",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1024",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 1024",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1440",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 1440",
+    "pass": true
+  },
+  {
+    "name": "no overflow at 1920",
+    "pass": true
+  },
+  {
+    "name": "CTA usable at 1920",
+    "pass": true
+  },
+  {
+    "name": "mouse overlays absent",
+    "pass": true
+  },
+  {
+    "name": "demo CTA navigates",
+    "pass": true
+  },
+  {
+    "name": "iphone demo still present",
+    "pass": true
+  },
+  {
+    "name": "no runtime errors",
+    "pass": true,
+    "data": []
+  }
+]

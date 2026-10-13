@@ -1,19 +1,19 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 /* ---------------------------------------------------------------------------
- * Buttons — DESIGN.md §6.4.
+ * Material buttons — DESIGN.md.
  * Primary: deep green / white text, for demo and main actions.
- * Secondary: readable outline, for pilot actions.
+ * Secondary: tonal green container, for pilot actions.
  * Focus rings are inherited from the global :focus-visible rule, which has a
- * 3 px offset and stays visible on both white and green surfaces.
+ * Visible on both light and green surfaces.
  * ------------------------------------------------------------------------ */
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 min-h-12 rounded-button font-medium transition-colors duration-150 ease-out-soft";
+  "material-button magnetic inline-flex items-center justify-center gap-2.5 min-h-13 rounded-button font-medium transition-colors duration-200 ease-out-soft";
 
 export const buttonClass = {
   primary: `${BASE} px-6 py-3 bg-primary text-white hover:bg-primary-hover`,
-  secondary: `${BASE} px-6 py-3 border border-control-border text-text hover:bg-surface`,
+  secondary: `${BASE} px-6 py-3 bg-accent-soft text-primary hover:bg-accent`,
   quiet: `${BASE} px-5 py-2.5 border border-border text-text hover:border-control-border hover:bg-surface`,
   // Over photography: the deep green primary would sink into the scrim, so the
   // emphasis inverts. Same roles, reversed values.
@@ -22,9 +22,8 @@ export const buttonClass = {
 } as const;
 
 /* ---------------------------------------------------------------------------
- * Scroll reveal wrapper — DESIGN.md §8.1.
- * Server-rendered: the hidden state only exists while `data-js` is "true", and
- * a single small client component flips the class when the element scrolls in.
+ * Server-rendered reveal marker. Content is visible by default; GSAP prepares
+ * below-fold entrances only after the motion engine loads successfully.
  * ------------------------------------------------------------------------ */
 
 export function Reveal({
@@ -34,7 +33,7 @@ export function Reveal({
   as: Tag = "div",
 }: {
   children: ReactNode;
-  /** Stagger in ms. Kept under ~120 ms so the page never feels slow. */
+  /** Stagger in ms; the motion owner caps it at 160 ms. */
   delay?: number;
   className?: string;
   as?: "div" | "li" | "section" | "header";
@@ -42,8 +41,8 @@ export function Reveal({
   return (
     <Tag
       data-reveal=""
+      data-reveal-delay={delay}
       className={className}
-      style={delay ? ({ "--reveal-delay": `${delay}ms` } as CSSProperties) : undefined}
     >
       {children}
     </Tag>
@@ -78,7 +77,10 @@ export function SectionIntro({
       {eyebrow ? (
         <Reveal>
           <span className="eyebrow">
-            <span aria-hidden="true" className="h-px w-6 bg-accent" />
+            <span
+              aria-hidden="true"
+              className="size-2 rounded-full bg-primary"
+            />
             {eyebrow}
           </span>
         </Reveal>
@@ -86,14 +88,16 @@ export function SectionIntro({
       <Reveal delay={60}>
         <h2
           id={id}
-          className={`${headingSize} font-medium text-text ${centered ? "max-w-[22ch]" : "max-w-[24ch]"}`}
+          className={`${headingSize} font-normal text-text ${centered ? "max-w-[24ch]" : "max-w-[25ch]"}`}
         >
           {title}
         </h2>
       </Reveal>
       {lead ? (
         <Reveal delay={110}>
-          <p className={`text-lead text-text-muted ${centered ? "max-w-[54ch]" : "max-w-[58ch]"}`}>
+          <p
+            className={`text-lead text-text-muted ${centered ? "max-w-[54ch]" : "max-w-[58ch]"}`}
+          >
             {lead}
           </p>
         </Reveal>

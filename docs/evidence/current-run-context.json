@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-13T16:11:28+07:00",
+  "environment": "Windows; Node.js 24.19.0; npm 11.17.0; headless Microsoft Edge via cached Playwright",
+  "target": "next start on http://127.0.0.1:3107 after npm run build",
+  "branch": "feature/material-expressive-redesign",
+  "head": "ca6707a2863402713b1b74b78d2ee1523910208c",
+  "workingTree": "Uncommitted redesign; HEAD is not an exact snapshot of tested source",
+  "result": "iphone-current-32.json",
+  "checks": 32,
+  "passed": 32,
+  "sourceHashes": {
+    "app/page.tsx": "850f1f6110ac69152abeef2d5a49a98837509015d344ceed8d30acfe61970b7e",
+    "app/layout.tsx": "bdec0cb024d4c449ebdc4199c92de131f5bdf05b202a2121fcd028b801a6de10",
+    "app/globals.css": "0796beeaac9484503c08114decdd547f552b09234cc012a2b6414723a788677e",
+    "app/material-tokens.css": "03a2e6b26608c88200a185d7ee8644c298327503960d3b7a0c7dbc5f6e45c275",
+    "components/landing/IPhoneWhatsAppDemo.tsx": "aed86c2d99e224143f0687224ff1db37f0fad9e07176f942882db7d9e1e6e468",
+    "components/landing/WhatsAppStory.tsx": "d9e7fd0f523f5b4a7af855f4e7aff0bfb6d48837ef7cf717dc75760795b32231",
+    "components/landing/HeroSection.tsx": "8d95b5e0b1be0eb8593e8d0a583218662ec9107c0842c3e4bfb7707f29ff502b",
+    "components/landing/ScrollReveal.tsx": "acc23c84ed9dba989217f230004a73d5f4bc4c4cc00d792f4634914b47ac43b8",
+    "content/story.ts": "ffdb3a15aff275c42c2e7e9e628f8c7994b828f6807a8e20927abf8d73d28f09",
+    "lib/site-config.ts": "cbf53747bd718fea3cb447b8e7447bc9b81aa51ca1146c070cee1fcba05f3b31",
+    "package.json": "fb2711d0a79b58f98c6f6ea2f8dad3cc5de0d025c0d9bb38b6feeff9d5e680a6",
+    "package-lock.json": "e156fa2ea81b541b497db3f0811edb220c7a33380dab7e9b0d92ac3b0539efce",
+    "next.config.ts": "72f117d10803df84906a63b4070a04ceef9f4315e174b3de23f282efc0e0c8e4"
+  },
+  "limitation": "Hashes recorded after the run; selected source files only. Historical milestone results refer to earlier source and must not be bound to these hashes."
+}

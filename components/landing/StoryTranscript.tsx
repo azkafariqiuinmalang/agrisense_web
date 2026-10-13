@@ -28,7 +28,9 @@ export function StoryTranscript() {
               <h3 className="text-base font-semibold text-text">
                 Tahap {index + 1}. {stage.title}
               </h3>
-              <p className="mt-1 text-[0.9375rem] text-text-muted">{stage.body}</p>
+              <p className="mt-1 text-[0.9375rem] text-text-muted">
+                {stage.body}
+              </p>
               <dl className="mt-3 flex flex-col gap-1.5">
                 {stage.messages.map((message, messageIndex) => (
                   <div

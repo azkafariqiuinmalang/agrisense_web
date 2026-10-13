@@ -86,11 +86,22 @@ export const siteConfig: SiteConfig = {
   developer: null,
   attribution: {
     icons8: {
-      required: true,
+      required: false,
       label: "Ikon oleh Icons8",
       href: "https://icons8.com",
     },
     photos: [
+      {
+        file: "/images/demo-melon-leaf.jpg",
+        title: "Alternaria leaf blight on melon (Cucumis melo), example photo",
+        author:
+          "Clemson University - USDA Cooperative Extension Slide Series, Bugwood.org",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Alternaria_leaf_blight_(Alternaria_cucumerina)_1436121.jpg",
+        license: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+        changes: "thumbnail diperkecil; tampilan preview dipotong",
+      },
       {
         file: "/images/greenhouse-melon-harvest.jpg",
         title: "A man showing melons grown in their green house farm",
@@ -105,7 +116,8 @@ export const siteConfig: SiteConfig = {
         file: "/images/greenhouse-melon-tumpakkepuh-interior.jpg",
         title: "Greenhouse Melon Desa Tumpakkepuh",
         author: "Pancoffee",
-        sourceUrl: "https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_Desa_Tumpakkepuh.jpg",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_Desa_Tumpakkepuh.jpg",
         license: "CC BY 4.0",
         licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
         changes: "dipotong",
@@ -114,7 +126,8 @@ export const siteConfig: SiteConfig = {
         file: "/images/greenhouse-melon-tumpakkepuh-exterior.jpg",
         title: "Greenhouse Melon di Desa Tumpakkepuh",
         author: "Ayamayam123",
-        sourceUrl: "https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_di_Desa_Tumpakkepuh.jpg",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_di_Desa_Tumpakkepuh.jpg",
         license: "CC BY 4.0",
         licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
         changes: "dipotong",
@@ -137,7 +150,10 @@ export function getPilotContact(): { href: string; label: string } | null {
   const wa = getPilotWhatsAppUrl();
   if (wa) return { href: wa, label: "Diskusikan pilot via WhatsApp" };
   if (siteConfig.contact.email) {
-    return { href: `mailto:${siteConfig.contact.email}`, label: "Diskusikan pilot via email" };
+    return {
+      href: `mailto:${siteConfig.contact.email}`,
+      label: "Diskusikan pilot via email",
+    };
   }
   return null;
 }

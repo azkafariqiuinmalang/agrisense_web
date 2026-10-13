@@ -1,21 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 
-// Montserrat is a variable font, so no weight list is needed: one file covers
-// every weight the page uses and keeps the font budget down (DESIGN.md §11).
-const montserrat = Montserrat({
-  subsets: ["latin"],
+const googleSans = localFont({
+  src: "../public/fonts/google-sans-latin-variable.woff2",
+  weight: "400 700",
   display: "swap",
-  variable: "--font-montserrat",
+  variable: "--font-google-sans",
 });
 
 export const metadata: Metadata = {
   title: "AgriSense — Asisten Budidaya Melon melalui WhatsApp",
   description:
     "Konsultasikan kondisi tanaman dan catat aktivitas greenhouse melon melalui WhatsApp. Pelajari AgriSense dan alur pilotnya.",
-  metadataBase: siteConfig.productionUrl ? new URL(siteConfig.productionUrl) : undefined,
+  metadataBase: siteConfig.productionUrl
+    ? new URL(siteConfig.productionUrl)
+    : undefined,
   openGraph: {
     title: "AgriSense — Asisten Budidaya Melon melalui WhatsApp",
     description:
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#fcfcf8",
 };
 
 export default function RootLayout({
@@ -44,21 +45,9 @@ export default function RootLayout({
     <html
       lang="id"
       data-js="false"
-      className={`${montserrat.variable} antialiased`}
+      className={`${googleSans.variable} antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        {/*
-          Mark JavaScript availability synchronously before paint so the no-JS
-          fallbacks and the reveal animations apply without a flash
-          (DESIGN.md §8.3).
-        */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.documentElement.setAttribute('data-js','true');`,
-          }}
-        />
-      </head>
       <body className="bg-bg font-sans text-text">
         <a
           href="#main"

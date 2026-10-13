@@ -1,37 +1,61 @@
-# Asset Manifest — AgriSense Web
+﻿# Manifest aset AgriSense
 
-Dokumen pencatatan lisensi, sumber, dan atribusi aset visual yang digunakan pada situs web AgriSense.
+Diperbarui 13 Oktober 2026. Manifest ini membedakan aset yang dirender, aset lokal pendukung, dan arsip yang masih tersedia di repo.
 
-## 1. Fotografi (Creative Commons)
+## Foto yang dirender
 
-| Berkas | Judul & Deskripsi | Sumber & URL | Pembuat / Artis | Lisensi | Perlakuan / Modifikasi |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `public/images/greenhouse-melon-harvest.jpg` | *A man showing melons grown in their green house farm* (Budidaya melon di greenhouse bertingkat) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_man_showing_melons_grown_in_their_green_house_farm.jpg) | Emmanuel Ssekaggo | CC BY-SA 4.0 ([Rincian](https://creativecommons.org/licenses/by-sa/4.0/)) | Penyesuaian resolusi & crop landscape untuk hero banner |
-| `public/images/greenhouse-melon-tumpakkepuh-interior.jpg` | *Greenhouse Melon Desa Tumpakkepuh* (Tanaman melon berbuah di bedengan tanah) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_Desa_Tumpakkepuh.jpg) | Pancoffee | CC BY 4.0 ([Rincian](https://creativecommons.org/licenses/by/4.0/)) | Crop vertikal untuk seksi konteks lapangan |
-| `public/images/greenhouse-melon-tumpakkepuh-exterior.jpg` | *Greenhouse Melon di Desa Tumpakkepuh* (Tampak luar greenhouse di Blitar) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_di_Desa_Tumpakkepuh.jpg) | Ayamayam123 | CC BY 4.0 ([Rincian](https://creativecommons.org/licenses/by/4.0/)) | Crop untuk seksi tentang |
+Keempat foto tercatat di `lib/site-config.ts`. Footer merender pembuat, tautan sumber, lisensi, dan keterangan perubahan.
 
-## 2. Ikon (Icons8 Material Outlined)
+| Berkas                                                    | Penggunaan                      | Pembuat                                                                   | Sumber dan lisensi                                                                                                                                                           |
+| --------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `public/images/greenhouse-melon-harvest.jpg`              | Foto hero                       | Emmanuel Ssekaggo                                                         | [Commons](https://commons.wikimedia.org/wiki/File:A_man_showing_melons_grown_in_their_green_house_farm.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `public/images/greenhouse-melon-tumpakkepuh-interior.jpg` | Konteks greenhouse              | Pancoffee                                                                 | [Commons](https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_Desa_Tumpakkepuh.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                          |
+| `public/images/greenhouse-melon-tumpakkepuh-exterior.jpg` | Section tentang                 | Ayamayam123                                                               | [Commons](https://commons.wikimedia.org/wiki/File:Greenhouse_Melon_di_Desa_Tumpakkepuh.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                       |
+| `public/images/demo-melon-leaf.jpg`                       | Lampiran contoh dan dialog foto | Clemson University - USDA Cooperative Extension Slide Series, Bugwood.org | [Commons](<https://commons.wikimedia.org/wiki/File:Alternaria_leaf_blight_(Alternaria_cucumerina)_1436121.jpg>), [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)   |
 
-Keluarga ikon: **Icons8 Material Outlined**  
-Format: PNG berukuran 48 px dan 96 px (sesuai lisensi gratis komersial Icons8 dengan tautan atribusi di footer).  
-Warna resmi diunduh via CDN Icons8: `#176B3A` (Primary Green), `#123524` (Deep Text), `#FFFFFF` (White), `#4B6357` (Muted).
+Keterangan perubahan pada config: harvest diperkecil/dipotong; interior dan exterior dipotong; foto daun menggunakan rendition thumbnail sumber dan preview yang dipotong secara visual. Foto daun disimpan tanpa retouch/crop lokal; rincian ada di [provenance foto](demo-photo-source.md). Pernyataan crop pada tampilan tidak berarti file asli lokal selalu telah diedit dengan crop.
 
-| Berkas | Konsep Ikon | URL Sumber Icons8 | Atribusi Wajib |
-| :--- | :--- | :--- | :--- |
-| `public/icons/chat-176b3a-96.png` | Chat / Konsultasi | `https://icons8.com/icon/set/chat/material-outlined` | Ya (Footer) |
-| `public/icons/camera-176b3a-96.png` | Foto Tanaman | `https://icons8.com/icon/set/camera/material-outlined` | Ya (Footer) |
-| `public/icons/microphone-176b3a-96.png` | Pesan Suara | `https://icons8.com/icon/set/microphone/material-outlined` | Ya (Footer) |
-| `public/icons/task-176b3a-96.png` | Catatan Kegiatan | `https://icons8.com/icon/set/task/material-outlined` | Ya (Footer) |
-| `public/icons/leaf-176b3a-96.png` | Daun / Pertanian | `https://icons8.com/icon/set/leaf/material-outlined` | Ya (Footer) |
-| `public/icons/inspection-176b3a-96.png` | Pemeriksaan Lapangan | `https://icons8.com/icon/set/inspection/material-outlined` | Ya (Footer) |
-| `public/icons/checked-checkbox-176b3a-96.png` | Konfirmasi Catatan | `https://icons8.com/icon/set/checked-checkbox/material-outlined` | Ya (Footer) |
-| `public/icons/calendar-176b3a-48.png` | Kalender Aktivitas | `https://icons8.com/icon/set/calendar/material-outlined` | Ya (Footer) |
-| `public/icons/menu-123524-48.png` | Buka Menu Mobile | `https://icons8.com/icon/set/menu/material-outlined` | Ya (Footer) |
-| `public/icons/multiply-123524-48.png` | Tutup Menu Mobile | `https://icons8.com/icon/set/multiply/material-outlined` | Ya (Footer) |
-| `public/icons/forward-ffffff-48.png` | Panah CTA Primary | `https://icons8.com/icon/set/forward/material-outlined` | Ya (Footer) |
-| `public/icons/forward-176b3a-48.png` | Panah Tautan | `https://icons8.com/icon/set/forward/material-outlined` | Ya (Footer) |
-| `public/icons/expand-arrow-176b3a-48.png` | Accordion Expand | `https://icons8.com/icon/set/expand-arrow/material-outlined` | Ya (Footer) |
-| `public/icons/checkmark-176b3a-48.png` | Centang Kecocokan | `https://icons8.com/icon/set/checkmark/material-outlined` | Ya (Footer) |
-| `public/icons/info-4b6357-48.png` | Informasi / Status | `https://icons8.com/icon/set/info/material-outlined` | Ya (Footer) |
+Foto mendukung konteks editorial. Tidak ada bukti bahwa subjeknya merupakan pelanggan, kebun pilot, hasil AgriSense, atau pendukung resmi proyek.
 
-Tautan atribusi aktif disematkan di footer: *"Ikon oleh Icons8"* ([https://icons8.com](https://icons8.com)).
+## Font dan ikon aktif
+
+| Aset                            | Lokasi/implementasi                                                               | Lisensi                                                  |
+| ------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Google Sans variable Latin      | `public/fonts/google-sans-latin-variable.woff2`, dimuat melalui `next/font/local` | SIL OFL 1.1, `public/fonts/OFL.txt`                      |
+| Material Symbols Rounded        | Path inline `components/landing/Icon.tsx`; SVG sumber `public/material-symbols/`  | Apache-2.0, `public/material-symbols/LICENSE`            |
+| Glyph logo AgriSense            | SVG pada komponen brand                                                           | Glyph proyek; bukan logo Google/WhatsApp                 |
+| Frame/status bar/chat wallpaper | CSS/SVG lokal, termasuk `public/images/demo-chat-wallpaper.svg`                   | Dibuat dalam proyek; bukan aset frame Apple yang diunduh |
+
+Sumber unduhan font/ikon dan mapping nama ada di [aset Google](google-assets.md). Tidak ada icon font penuh atau request Google Fonts pada runtime. Logo/aset Google tidak menyatakan afiliasi proyek.
+
+## Arsip Icons8 versi awal
+
+PNG berikut masih tersimpan di `public/icons/`, tetapi tidak lagi dirender oleh UI saat ini. Warna sumber: hijau `176B3A`, teks `123524`, putih `FFFFFF`, muted `4B6357`. Keluarga tercatat: Icons8 Material Outlined.
+
+| Berkas                                           | Sumber tercatat                                                                    |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| `chat-176b3a-48.png`, `chat-176b3a-96.png`       | [chat](https://icons8.com/icon/set/chat/material-outlined)                         |
+| `camera-176b3a-48.png`, `camera-176b3a-96.png`   | [camera](https://icons8.com/icon/set/camera/material-outlined)                     |
+| `microphone-176b3a-96.png`                       | [microphone](https://icons8.com/icon/set/microphone/material-outlined)             |
+| `task-176b3a-96.png`                             | [task](https://icons8.com/icon/set/task/material-outlined)                         |
+| `leaf-176b3a-96.png`                             | [leaf](https://icons8.com/icon/set/leaf/material-outlined)                         |
+| `inspection-176b3a-96.png`                       | [inspection](https://icons8.com/icon/set/inspection/material-outlined)             |
+| `checked-checkbox-176b3a-96.png`                 | [checked-checkbox](https://icons8.com/icon/set/checked-checkbox/material-outlined) |
+| `calendar-176b3a-48.png`                         | [calendar](https://icons8.com/icon/set/calendar/material-outlined)                 |
+| `menu-123524-48.png`                             | [menu](https://icons8.com/icon/set/menu/material-outlined)                         |
+| `multiply-123524-48.png`                         | [multiply](https://icons8.com/icon/set/multiply/material-outlined)                 |
+| `forward-ffffff-48.png`, `forward-176b3a-48.png` | [forward](https://icons8.com/icon/set/forward/material-outlined)                   |
+| `expand-arrow-176b3a-48.png`                     | [expand-arrow](https://icons8.com/icon/set/expand-arrow/material-outlined)         |
+| `checkmark-176b3a-48.png`                        | [checkmark](https://icons8.com/icon/set/checkmark/material-outlined)               |
+| `info-4b6357-48.png`                             | [info](https://icons8.com/icon/set/info/material-outlined)                         |
+
+Catatan implementasi awal menyebut penggunaan dengan atribusi “Ikon oleh Icons8” yang menaut ke [Icons8](https://icons8.com). UI saat ini menonaktifkan atribusi Icons8 karena ikon tidak dirender. Lisensi aset arsip tidak diverifikasi ulang dari situs penerbit pada pembaruan dokumentasi ini. Jika dipakai kembali, periksa ketentuan penggunaan/atribusi yang berlaku; penyimpanan arsip tidak mengubah ketentuan penerbit.
+
+## Screenshot dan aset starter
+
+- `docs/previews/`: bukti visual dokumentasi, dengan status milestone di [validasi](redesign-validation.md).
+- `docs/evidence/`: hasil JSON smoke checks, bukan data pengguna atau CI.
+- `public/screenshot-*.png`: 13 screenshot lama masih tersimpan dan dapat disajikan sebagai aset publik; bukan preview terbaru.
+- `public/next.svg`, `vercel.svg`, `file.svg`, `globe.svg`, `window.svg`, dan favicon awal masih ada. Provenance starter tidak ditulis ulang sebagai aset buatan AgriSense.
+
+Tidak ada penghapusan aset pada pembaruan dokumentasi. Review arsip public dan pemilihan favicon merupakan backlog sebelum rilis. Proyek belum memiliki berkas lisensi tingkat repo untuk kode sendiri; lisensi foto/font/ikon berlaku pada aset masing-masing.

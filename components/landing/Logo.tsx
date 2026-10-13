@@ -17,8 +17,20 @@ export function LeafGlyph({ className = "" }: { className?: string }) {
       className={className}
     >
       <g fill="currentColor">
-        <ellipse cx="20.2" cy="13.8" rx="4.6" ry="2.4" transform="rotate(-35 20.2 13.8)" />
-        <ellipse cx="11.8" cy="13.8" rx="4.6" ry="2.4" transform="rotate(35 11.8 13.8)" />
+        <ellipse
+          cx="20.2"
+          cy="13.8"
+          rx="4.6"
+          ry="2.4"
+          transform="rotate(-35 20.2 13.8)"
+        />
+        <ellipse
+          cx="11.8"
+          cy="13.8"
+          rx="4.6"
+          ry="2.4"
+          transform="rotate(35 11.8 13.8)"
+        />
       </g>
       <path
         d="M16 27V12.5"
@@ -34,7 +46,7 @@ export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <span
       aria-hidden="true"
-      className={`flex shrink-0 items-center justify-center rounded-[9px] bg-primary ${className}`}
+      className={`flex shrink-0 items-center justify-center rounded-[15px] bg-primary ${className}`}
     >
       <LeafGlyph className="size-[62%] text-white" />
     </span>
@@ -45,11 +57,14 @@ export function Logo({ href = "#beranda" }: { href?: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2.5 rounded-md"
+      className="brand-logo magnetic inline-flex items-center gap-2.5 rounded-md"
       aria-label={`${siteConfig.name} — kembali ke beranda`}
     >
-      <LogoMark className="size-8" />
-      <span className="text-[1.0625rem] font-semibold tracking-[-0.02em] text-text">
+      <LogoMark className="size-10" />
+      <span
+        className="text-[1.375rem] font-medium tracking-[-0.04em] text-text"
+        translate="no"
+      >
         {siteConfig.name}
       </span>
     </a>

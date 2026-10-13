@@ -17,7 +17,7 @@ const FOOTER_LINKS = [
  */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t border-border bg-bg">
       <div className="page-container py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
@@ -84,7 +84,16 @@ export function SiteFooter() {
                   >
                     Wikimedia Commons
                   </a>
-                  , {photo.license} ({photo.changes}).
+                  ,{" "}
+                  <a
+                    href={photo.licenseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4"
+                  >
+                    {photo.license}
+                  </a>{" "}
+                  ({photo.changes}).
                 </li>
               ))}
             </ul>
