@@ -1,9 +1,9 @@
-import { StartupLanding } from "@/components/startup/StartupLanding";
+import { StitchLanding } from "@/components/stitch/StitchLanding";
 
 /**
- * Modern startup-grade landing page with OpenAI Sans typography,
- * Supabase & shadcn UI iconography, and clean layouting.
+ * Publish the same Stitch landing page used by the approved local design.
+ * Keep the farmer and admin dashboard routes independent of this entry point.
  */
 export default function Home() {
-  return <StartupLanding />;
+  return <StitchLanding />;
 }
