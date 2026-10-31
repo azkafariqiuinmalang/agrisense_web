@@ -8,12 +8,14 @@
     "build:webpack": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
+    "test:dashboard": "node --test --test-concurrency=1 tests/farmer-dashboard.test.mjs",
     "design:tokens": "node scripts/generate-material-theme.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
     "lenis": "^1.3.26",
+    "lucide-react": "^1.61.0",
     "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"

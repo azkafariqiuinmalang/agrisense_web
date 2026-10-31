@@ -1,9 +1,9 @@
-import { StitchLanding } from "@/components/stitch/StitchLanding";
+import { StartupLanding } from "@/components/startup/StartupLanding";
 
 /**
- * Landing page adapted from the user's selected Stitch screen.
- * Only navigation and the chat simulator require client-side interaction.
+ * Modern startup-grade landing page with OpenAI Sans typography,
+ * Supabase & shadcn UI iconography, and clean layouting.
  */
 export default function Home() {
-  return <StitchLanding />;
+  return <StartupLanding />;
 }

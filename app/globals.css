@@ -49,7 +49,7 @@
   --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 @theme inline {
-  --font-sans: var(--font-google-sans), Arial, sans-serif;
+  --font-sans: "OpenAI Sans", var(--font-jakarta), var(--font-google-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Inter", sans-serif;
 }
 @custom-variant no-js (&:where([data-js="false"], [data-js="false"] *));
 @utility page-container {

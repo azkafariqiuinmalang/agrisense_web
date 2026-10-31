@@ -1,4 +1,14 @@
-﻿# Progres AgriSense Web
+# Progres AgriSense Web
+
+## Pembaruan aktif: 14 Oktober 2026
+
+Dashboard petani dan login WhatsApp diperbarui pada branch `feature/updated-design`. Adapter web menggunakan profile backend dan operasi MCP baca yang sudah tersedia, dengan polling 5 detik saat tab aktif. Tidak ada perubahan pada backend, migrasi, database, atau MCP `D:\Development\Agrisense`.
+
+Lint, TypeScript/build, 10 tes API dan 30 pemeriksaan browser lulus. Pengujian memakai upstream simulasi terisolasi; bukan bukti pengiriman/pencatatan WhatsApp pengguna nyata. Data dibatasi 25 kebun/tanaman/panen dan 20 aktivitas tanaman aktif terakhir; riwayat transaksi lengkap belum tersedia melalui API baca. Lihat [integrasi dashboard petani](backend-integration.md) untuk konfigurasi dan bukti visual.
+
+Perubahan web ini belum dikomit/push. Bagian di bawah merupakan snapshot dokumentasi sebelum pembaruan tersebut dan tidak boleh dipakai sebagai status implementasi/dashboard terbaru.
+
+## Riwayat sebelum pembaruan dashboard
 
 Diperbarui 13 Oktober 2026, berdasarkan dokumentasi proyek, kode working tree, status Git lokal, dan pemeriksaan pada sesi pengembangan ini.
 

@@ -1,111 +1,93 @@
-# Integrasi web–backend petani
+﻿# Dashboard petani: membaca backend tetap
 
-## Jalur data
+Diperbarui 14 Oktober 2026. Scope pekerjaan: UI/UX website dan penghubung baca website. Repository, service, database, migrasi, dan MCP di `D:\Development\Agrisense` tidak diubah.
 
-Browser → API Next.js (`/api/session`, `/api/dashboard`) → platform-service
-Rust (`/identity/login`, `/identity/profile`, `/identity/dashboard`) → fungsi
-database `identity.farmer_dashboard()`.
+## Perilaku pengguna
 
-Web tidak memakai koneksi database langsung, JWT signing secret, atau token
-internal Brain/AI. Nomor pada form hanya identitas; kode kanal membuktikan
-kepemilikan. JWT hasil backend disimpan dalam cookie HttpOnly, SameSite=Strict,
-berumur 15 menit. Pada produksi, cookie Secure dan prefiks `__Host-` digunakan.
-Token tidak dikembalikan dalam JSON login dan tidak disimpan di localStorage.
+1. Petani mengirim `LOGIN` pada percakapan WhatsApp AgriSense yang sudah digunakan.
+2. Halaman `/login` menerima nomor WhatsApp dan kode 64 karakter dari balasan backend. Nomor saja tidak cukup. UI OTP 6 digit dan nomor bantuan hardcoded sudah dihapus.
+3. API session web memakai login backend yang sudah ada. JWT tetap berada dalam cookie HttpOnly, SameSite Strict, Secure pada production, berumur sesuai kontrak backend 15 menit.
+4. Setelah login, `/dashboard` memuat catatan milik sesi tersebut. Pencatatan dilakukan melalui WhatsApp; dashboard tidak menyediakan operasi tulis.
+5. Data diperiksa otomatis setiap 5 detik setelah pembacaan sebelumnya selesai, saat tab terlihat dan browser online. Perubahan yang sudah tersimpan muncul pada pembacaan berikutnya.
 
-## Konfigurasi lokal
+Ini pembaruan berkala mendekati real time, bukan push event/WebSocket. Waktu total juga dipengaruhi proses simpan backend, jaringan, dan durasi request. Pesan WhatsApp atau draft yang belum dikonfirmasi tidak diperlakukan sebagai data tersimpan.
 
-Isi `.env.local` yang diabaikan Git:
+## Penghubung yang benar-benar dipakai
+
+`GET /api/dashboard` tidak lagi memanggil `/identity/dashboard`, yang tidak tersedia pada backend yang diperiksa. Website memakai operasi berikut:
+
+| Akses                                         | Tujuan                                                           | Batas                                                      |
+| --------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------- |
+| Platform `GET /identity/profile`              | Identitas, role dan status saat ini                              | Harus petani aktif/pending verification                    |
+| Brain `POST /mcp/call`: `get_farm_status`     | Daftar kebun dan tanaman aktif per kebun                         | Maksimal 25 kebun                                          |
+| Brain `POST /mcp/call`: `get_crop_status`     | Tanaman, varietas, tanggal/umur/status, sistem dan luas budidaya | Maksimal 25 tanaman                                        |
+| Brain `POST /mcp/call`: `get_harvest_history` | Riwayat panen tercatat                                           | Maksimal 25 catatan                                        |
+| Brain `POST /mcp/call`: `check_credit_score`  | Skor yang sudah ada dan masa berlaku                             | Bukan scoring baru atau persetujuan bank                   |
+| Farm `POST /internal/activities/recent`       | Aktivitas terbaru dari tanaman aktif terakhir                    | Maksimal 20; memerlukan credential internal baca di server |
+
+Walaupun beberapa endpoint menggunakan POST, operasi yang dipilih adalah pembacaan. Adapter tidak memanggil `record_expense`, `request_kur`, `/mcp/confirm`, `/internal/operations`, AI/vision, atau query database langsung. Nama tool/path tetap di kode, bukan input dari browser.
+
+JWT dipakai untuk pembacaan MCP. Nomor untuk pembacaan aktivitas berasal dari profile backend yang sudah terautentikasi, bukan query/body pengguna. Query pemilihan pemilik ditolak. API memakai private/no-store dan tidak mengembalikan JWT maupun credential internal.
+
+## Data yang belum bisa dijanjikan
+
+- API MCP yang tersedia membatasi daftar hingga 25 item dan tidak menyediakan pagination untuk membaca seluruh riwayat.
+- Aktivitas adalah 20 catatan terbaru **dari tanaman aktif terakhir**, bukan seluruh aktivitas seluruh kebun.
+- Daftar transaksi pemasukan/pengeluaran, draft/revisi CRUD, dan receipt belum memiliki penghubung HTTP baca yang tersedia untuk website ini.
+- Ringkasan UI menyebut jumlah/berat **yang ditampilkan**, bukan total seluruh data di database.
+- Bagian keuangan menampilkan keterbatasan akses riwayat, bukan angka nol atau data contoh.
+- CMS admin belum diubah pada pekerjaan dashboard petani ini; endpoint admin/dashboard yang diperlukan CMS lama tetap belum tersedia pada backend yang diperiksa.
+
+Seluruh data petani belum dapat ditampilkan hanya dengan kontrak API tersebut. Backend tetap dipertahankan; keterbatasan ditampilkan secara jujur tanpa bypass akses database atau membuat endpoint baru pada backend.
+
+## Sinkronisasi dan sesi
+
+Polling memakai satu request pada satu waktu. Fokus/tab aktif dan event online memicu pemeriksaan. Tab tersembunyi tidak terus polling; koneksi offline mempertahankan snapshot terakhir. Kegagalan request memakai backoff hingga 30 detik; kegagalan bagian tertentu ditampilkan sebagai kondisi parsial.
+
+401/403 menghapus snapshot dan mengarahkan pengguna ke login. Logout menghentikan polling, membatalkan request frontend, dan menghapus snapshot sebelum navigasi, termasuk pada tree route yang disimpan Next.js. Kolom kode/nomor login dikosongkan setelah login berhasil. Data dashboard tidak disimpan di localStorage/sessionStorage.
+
+## Konfigurasi web
+
+Salin `.env.example` menjadi `.env.local` jika belum ada:
 
 ```dotenv
 AGRISENSE_PLATFORM_URL=http://127.0.0.1:3009
+AGRISENSE_BRAIN_URL=http://127.0.0.1:3002
+AGRISENSE_FARM_URL=http://127.0.0.1:3003
+AGRISENSE_WEB_ORIGIN=http://localhost:3000
+AGRISENSE_DATA_ENV=configured_backend
+AGRISENSE_FARM_READ_TOKEN=
 ```
 
-Untuk stack uji terisolasi, ganti port menjadi `13009`. Checkpoint integrasi
-lokal saat ini diarahkan ke port uji tersebut. Backend memerlukan migrasi
-`202610130002_farmer_dashboard.sql` dan binary platform-service terbaru.
-Jangan mengarahkan tes fixture ke database normal.
+`AGRISENSE_FARM_READ_TOKEN` bersifat server-only dan harus cocok dengan `BRAIN_FARM_TOKEN` backend yang sudah ada. Tanpa credential ini, aktivitas diberi status belum terhubung; data MCP lain tetap dapat dimuat. Tidak ada token registrasi MCP, JWT signing secret, atau credential database yang diperlukan di browser.
 
-Konfigurasi lokal juga memakai `AGRISENSE_DATA_ENV=validation`, sehingga
-dashboard menandai data sebagai database uji. Saat memakai backend normal yang
-telah diverifikasi, ubah port/origin dan label environment tersebut; jangan
-menampilkan fixture sebagai data produksi.
+Pada workspace ini, konfigurasi lokal dibuat saat belum ada `.env.local`, memakai origin localhost dan token Farm yang sudah dikonfigurasi backend. Nilai secret tidak dicetak dan file diabaikan Git. Konfigurasi backend tidak diedit. Untuk deployment, isi origin service terpercaya serta origin HTTPS web melalui environment host.
 
-Pada produksi, set origin backend yang dipercaya dan
-`AGRISENSE_WEB_ORIGIN=https://<domain-web-yang-disetujui>`. Tanpa konfigurasi
-origin web, POST login/logout produksi ditolak. Browser tidak mengakses backend
-lintas origin, sehingga tidak perlu membuka CORS database/service ke publik.
+Untuk fixture validation, set `AGRISENSE_DATA_ENV=validation`; UI menandai mode uji. Jangan memakai data fixture sebagai bukti data produksi.
 
-## Penggunaan
-
-1. Petani terdaftar mengirim `LOGIN` melalui WhatsApp.
-2. Bot mengirim kode sekali pakai 64 karakter hex, berlaku 5 menit (bukan PIN
-   enam angka). Form mengizinkan paste dan menyediakan petunjuk format.
-3. Buka `/login`; isi nomor dan kode. Format lokal `08…` dinormalisasi ke `+628…`.
-4. Setelah backend memverifikasi kode dan profil petani aktif, buka `/dashboard`.
-5. Gunakan Muat ulang untuk membaca perubahan terbaru dari WhatsApp; belum
-   menggunakan WebSocket atau live polling. Tombol Keluar menghapus cookie web.
-
-Logout tidak mencabut JWT yang sudah dicuri dari backend; token tetap memiliki
-masa berlaku backend. Tidak ada refresh token atau akun admin dalam dashboard
-ini. Form tidak menerbitkan kode sendiri dan tidak menyediakan login bypass.
-
-## Data dan grafik
-
-- Ringkasan seluruh riwayat: jumlah kebun, tanaman aktif, aktivitas, panen kg,
-  dan total pengeluaran (hanya transaksi expense, bukan revenue/transfer).
-- Grafik batang sederhana: pengeluaran per kategori dan komposisi aktivitas
-  selama enam bulan kalender terakhir, termasuk bulan berjalan sampai hari ini.
-- Tabel tren enam bulan: panen dan pengeluaran, dengan bulan kosong bernilai nol
-  pencatatan; bukan estimasi hasil pertanian.
-- Maksimal 100 kebun, 100 tanaman, dan 20 aktivitas terbaru; agregat ringkasan
-  dihitung dari seluruh data pemilik, bukan potongan daftar tersebut.
-- Kalender menggunakan Asia/Jakarta. Nominal rupiah dikirim sebagai string
-  dan diformat memakai BigInt agar tidak kehilangan presisi integer besar.
-- Tidak ada grafik/data contoh pada dashboard aktif. Empty state dan kegagalan
-  backend ditampilkan secara berbeda.
-
-Seluruh akses dashboard scoped oleh signed JWT sub dan akun database aktif.
-Tidak ada owner ID pada URL, arbitrary MCP proxy, endpoint konfirmasi, atau
-endpoint tulis pada web. API memakai no-store; suspended/non-farmer ditolak.
-GET `/dashboard` menyajikan shell tanpa data pribadi; data hanya dimuat melalui
-API terautentikasi, dan pengunjung tanpa sesi diarahkan ke login.
-
-## Verifikasi
-
-Di web: `npm run lint`, `npx --no-install tsc --noEmit --incremental false`,
-dan `npm run build`.
-
-Di backend: runner validasi terisolasi menjalankan tes SQL
-`infrastructure/postgres/tests/farmer_dashboard.sql`. Dengan stack uji dan web
-lokal berjalan, jalankan dari root backend:
+## Verifikasi dan batas bukti
 
 ```sh
-python scripts/check_web_dashboard.py --disposable-demo-db --web-url http://127.0.0.1:3000
+npm run lint
+npx --no-install tsc --noEmit --incremental false
+npm run build
+npm run test:dashboard
 ```
 
-Script menyiapkan dan membersihkan petani sintetis hanya pada container yang
-terverifikasi sebagai project `agrisense-validation`. Kode diterbitkan oleh
-Brain melalui perintah LOGIN terautentikasi, lalu dipakai pada API web nyata.
-Ini tidak membuktikan pengiriman Meta WhatsApp, kualitas AI, atau kesiapan
-deployment produksi. Output tidak mencetak kode, cookie, JWT, atau data petani.
+`test:dashboard` memakai Node test runner dan HTTP upstream simulasi terisolasi. Build diperlukan sebelum tes. Sepuluh tes mencakup sesi, pemilihan pemilik, operasi baca terbatas, perubahan data, gagal parsial, response tidak valid, pencabutan akses, dan format login/cookie.
 
-Sebelum rilis: uji kanal WhatsApp nyata, deployment HTTPS, konfigurasi proxy
-dan origin, pembatas abuse login, kebijakan retensi data, serta smoke test
-pada lingkungan staging dengan akun yang disetujui.
+`tests/dashboard-browser.mjs` memakai Playwright sebagai alat verifikasi lokal opsional (bukan dependency runtime). Jalankan setelah build, dengan Playwright tersedia atau `PLAYWRIGHT_MODULE` menunjuk module Playwright lokal. Browser yang digunakan adalah headless Microsoft Edge.
 
-## Hasil verifikasi 13 Oktober 2026
+Hasil pada pekerjaan ini: lint, TypeScript/build lulus; **10/10 tes API** dan **30/30 pemeriksaan browser** lulus. Pemeriksaan browser meliputi login, auto-refresh data baru, enam/pendek kode ditolak, filter, viewport 320–1440px, offline/recovery, gagal parsial, single-flight, tab background, pencabutan akses, logout saat request masih berjalan, dan cookie dibersihkan.
 
-- Lint, TypeScript, dan build produksi frontend lulus.
-- Build/runtime backend lulus; 75 tes Rust lulus, 1 doc-test contoh diabaikan.
-- Empat suite SQL, termasuk dashboard ownership/agregat/grant, lulus.
-- Regresi offline: 9 core flow, 16 MCP HTTP, dan 17 domain gap checks lulus.
-- Integrasi web–Rust–PostgreSQL: 13 checks lulus, termasuk kode sekali pakai,
-  expiry, cookie, isolasi pemilik, status/role terbaru, read-only dan logout.
-- Tidak ada inferensi AI berbayar atau pengiriman Meta nyata pada rangkaian ini.
-- Backend menggunakan branch `azkafariqiuinmalang/web-dashboard-integration`;
-  web menggunakan `feature/backend-dashboard-integration`. Belum commit/push.
+Tes tersebut memakai data sintetis dan menjalankan website serta adapter sesungguhnya terhadap upstream simulasi. Ini bukan verifikasi pengiriman Meta WhatsApp, kode login pengguna nyata, atau end-to-end pencatatan WA pada database utama. Tidak ada transaksi fixture, migrasi, atau reset pada backend AgriSense.
 
-Runner menggunakan compiler Docker 1.97.1 yang sudah tersedia, bukan mengunduh
-toolchain floating stable. Autentikasi webhook validation dibuat sementara
-dan dikembalikan setelah runner selesai; file `.env` backend tidak diubah.
-Stack uji dipertahankan untuk pengecekan lokal. Tidak ada migrasi database normal.
+Preview data uji: [dashboard desktop](previews/farmer-dashboard-desktop.png), [dashboard mobile](previews/farmer-dashboard-mobile.png), [login desktop](previews/farmer-login-desktop.png), [login mobile](previews/farmer-login-mobile.png).
+
+## Berkas utama
+
+- `app/dashboard/FarmerDashboard.tsx`, `dashboard.module.css`: layout dan tampilan data.
+- `app/dashboard/use-farmer-dashboard.ts`: lifecycle polling, snapshot, dan cleanup.
+- `lib/farmer-dashboard-server.ts`, `farmer-dashboard-types.ts`: adapter baca dan data yang diizinkan keluar ke browser.
+- `app/api/dashboard/route.ts`: route snapshot milik sesi login.
+- `app/login/LoginForm.tsx`: login dengan kode backend yang benar.
