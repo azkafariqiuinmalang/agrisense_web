@@ -10,6 +10,13 @@ const googleSans = localFont({
   variable: "--font-google-sans",
 });
 
+const plusJakarta = localFont({
+  src: "../public/fonts/plus-jakarta-variable.woff2",
+  weight: "400 800",
+  display: "swap",
+  variable: "--font-jakarta",
+});
+
 export const metadata: Metadata = {
   title: "AgriSense — Asisten Budidaya Melon melalui WhatsApp",
   description:
@@ -45,7 +52,7 @@ export default function RootLayout({
     <html
       lang="id"
       data-js="false"
-      className={`${googleSans.variable} antialiased`}
+      className={`${googleSans.variable} ${plusJakarta.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="bg-bg font-sans text-text">

@@ -2,7 +2,9 @@
 
 Landing page berbahasa Indonesia untuk memperkenalkan prototipe asisten budidaya melon di greenhouse bermedia tanah.
 
-**Status per 13 Oktober 2026:** frontend dan demo terpandu sudah diimplementasikan serta diuji secara lokal. Ini belum menjadi layanan WhatsApp/AI siap produksi. Demo menggunakan pesan contoh, tidak menerima pertanyaan bebas, dan tidak menyimpan kegiatan ke database.
+**Status per 14 Oktober 2026:** dashboard petani dan login WhatsApp diperbarui. Website membaca API/MCP backend yang sudah ada, dengan polling 5 detik saat halaman aktif. Backend, database, dan MCP di `D:\Development\Agrisense` tidak diubah. Daftar dibatasi kemampuan API yang tersedia; riwayat transaksi lengkap belum dapat dibaca. Demo landing tetap memakai pesan contoh dan terpisah dari dashboard.
+
+Panduan dashboard aktif, konfigurasi lokal, batas data, dan hasil pengujian: [integrasi dashboard petani](docs/backend-integration.md).
 
 ## Dokumentasi
 
@@ -20,6 +22,12 @@ Landing page berbahasa Indonesia untuk memperkenalkan prototipe asisten budidaya
 | [Instruksi agen](AGENTS.md)                       | Aturan Next.js untuk perubahan kode                                         |
 
 ## Menjalankan proyek
+
+Integrasi petani tersedia pada `/login` dan `/dashboard`, menggunakan kode
+sekali pakai dari perintah WhatsApp `LOGIN`. Dashboard membaca backend melalui
+server Next.js, bukan langsung ke database. Konfigurasi, batasan, dan pengujian:
+[integrasi backend](docs/backend-integration.md). Landing/demo publik tetap
+terpisah dan tidak berubah menjadi simulasi dashboard.
 
 Diperlukan Node.js minimal 20.9 menurut panduan yang disertakan dalam paket Next.js terpasang. Lingkungan verifikasi saat ini: Windows, Node.js 24.19.0, npm 11.17.0. Versi minimum tersebut belum diuji khusus di proyek ini.
 
@@ -39,20 +47,20 @@ npm run build
 npm start
 ```
 
-`npm start` memerlukan build terlebih dahulu. Build berhasil menghasilkan halaman statis `/` dan halaman bawaan `/_not-found`; ini bukan bukti bahwa sebuah deployment publik sudah berjalan. `build:webpack` tersedia sebagai alternatif, tetapi tidak dijalankan pada pembaruan dokumentasi ini.
+`npm start` memerlukan build terlebih dahulu. Build saat ini menghasilkan halaman `/`, `/login`, `/dashboard`, `/cms`, serta API session/dashboard/CMS dinamis. Build lokal tidak membuktikan deployment publik sudah berjalan. `build:webpack` tersedia sebagai alternatif, tetapi tidak dijalankan pada pembaruan ini. Setelah build, jalankan `npm run test:dashboard` untuk pengujian adapter baca terhadap upstream simulasi terisolasi.
 
 ## Teknologi yang digunakan
 
-| Bagian           | Implementasi saat ini                                             |
-| ---------------- | ----------------------------------------------------------------- |
-| Framework        | Next.js 16.4.0 App Router, React 19.3.0, TypeScript               |
-| Styling          | Tailwind CSS 4 dan CSS khusus                                     |
-| Identitas visual | Google Sans lokal, Material Symbols Rounded SVG inline, palet HCT |
-| Animasi          | GSAP 3.15.0 / ScrollTrigger                                       |
-| Smooth scroll    | Lenis 1.3.26 untuk wheel; touch tetap native                      |
-| Demo             | React state, transcript lokal, frame iPhone dari CSS/SVG          |
+| Bagian           | Implementasi saat ini                                                        |
+| ---------------- | ---------------------------------------------------------------------------- |
+| Framework        | Next.js 16.4.0 App Router, React 19.3.0, TypeScript                          |
+| Styling          | Tailwind CSS 4 dan CSS khusus                                                |
+| Identitas visual | Plus Jakarta Sans lokal untuk landing/dashboard/login, Material Symbols SVG  |
+| Animasi          | Web Animations pada landing aktif; CSS pada dashboard/login                  |
+| Smooth scroll    | Scroll native dan CSS smooth scroll pada landing                             |
+| Demo             | Transcript contoh otomatis dalam frame CSS/SVG; terpisah dari data dashboard |
 
-Tampilan terinspirasi Material 3/Expressive. AgriSense merupakan produk independen; penggunaan aset Google tidak berarti afiliasi atau sertifikasi Google. MUI dan `@material/web` tidak dipakai. `@gsap/react` terpasang, tetapi komponen saat ini menggunakan GSAP langsung.
+Landing aktif diadaptasi dari desain Stitch yang dipilih pengguna. Dashboard/login memakai identitas hijau-mint yang selaras. AgriSense merupakan produk independen; penggunaan aset Google tidak berarti afiliasi atau sertifikasi Google. GSAP/Lenis dan komponen Material sebelumnya masih tersimpan sebagai implementasi lama. MUI dan `@material/web` tidak dipakai.
 
 Regenerasi token warna:
 
@@ -88,6 +96,8 @@ Mengisi konfigurasi tidak mengimplementasikan backend. Label fitur hanya boleh d
 Pada pembaruan ini, lint, TypeScript, dan build produksi lokal lulus. Audit runtime melaporkan 0 temuan; audit lengkap melaporkan 5 temuan tinggi pada rantai tooling ESLint. Rincian dan batas hasil ada di [laporan validasi](docs/redesign-validation.md).
 
 Pada 13 Oktober 2026, redesign, demo iPhone, aset, dan dokumentasi berhasil dipush ke `origin/main` pada [commit implementasi `06956ea`](https://github.com/Rafiqalha/agrisense-web/commit/06956ea). Branch lokal sekarang `main`. Pembaruan catatan publikasi berada pada commit dokumentasi berikutnya; lihat [riwayat main](https://github.com/Rafiqalha/agrisense-web/commits/main). Push GitHub tidak membuktikan deployment publik sudah berjalan; deployment belum diverifikasi.
+
+Pada 31 Oktober 2026, pembaruan landing, dashboard petani/login, dan adapter baca dikomit sebagai `2bd37c6` dan dipush ke `feature/updated-design`, lalu digabungkan ke `main`. Lint, TypeScript, build produksi, dan 10 tes API dengan upstream simulasi lulus pada sesi ini. Deployment publik dan alur WhatsApp pengguna nyata belum diverifikasi.
 
 ## Lisensi dan aset
 

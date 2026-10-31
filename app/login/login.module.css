@@ -1,0 +1,428 @@
+.page {
+  font-family: var(--font-jakarta), Arial, sans-serif;
+  min-height: 100dvh;
+  background: #fafbf7;
+  color: #244530;
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.page * {
+  box-sizing: border-box;
+}
+.page h1,
+.page h2,
+.page p {
+  margin: 0;
+}
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+.page button,
+.page input {
+  font: inherit;
+  touch-action: manipulation;
+}
+.page button {
+  cursor: pointer;
+}
+.page button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.page :focus-visible {
+  outline: 3px solid #238151;
+  outline-offset: 4px;
+}
+.header {
+  max-width: 1250px;
+  margin: auto;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 25px;
+  font-weight: 750;
+  letter-spacing: -1.1px;
+}
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+}
+.back {
+  font-size: 12px;
+  color: #799174 !important;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.layout {
+  max-width: 1100px;
+  margin: 32px auto 45px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.introduction {
+  padding-right: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.eyebrow,
+.smallLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #81996e;
+}
+.introduction h1 {
+  font-size: clamp(36px, 4vw, 49px);
+  line-height: 1.18;
+  font-weight: 650;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+.introduction > p {
+  color: #7b8f70;
+  max-width: 430px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.illustration {
+  position: relative;
+  height: 220px;
+  max-width: 330px;
+  margin: 18px 0;
+}
+.circle {
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background: #f0ecd8;
+  left: 109px;
+  top: 36px;
+}
+.leafOne,
+.leafTwo {
+  width: 145px;
+  height: 100px;
+  border-radius: 110% 5% 110% 5%;
+  background: #bdcfa7;
+  position: absolute;
+  left: 46px;
+  top: 50px;
+  transform: rotate(23deg);
+}
+.leafTwo {
+  left: 173px;
+  top: 5px;
+  background: #638453;
+  width: 104px;
+  height: 75px;
+  transform: rotate(-26deg);
+}
+.stem {
+  position: absolute;
+  width: 4px;
+  height: 143px;
+  background: #789863;
+  left: 177px;
+  top: 67px;
+  transform: rotate(-8deg);
+  border-radius: 10px;
+}
+.grain {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d5ba72;
+  left: 281px;
+  top: 129px;
+}
+.steps {
+  display: grid;
+  gap: 13px;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #647d58;
+  font-weight: 550;
+}
+.introduction .caption {
+  font-size: 12px;
+  max-width: 370px;
+  margin-top: 25px;
+  color: #98a28a;
+  line-height: 1.8;
+}
+.card {
+  padding: 39px 35px 27px;
+  background: #fff;
+  border: 1px solid #e1e9da;
+  border-radius: 24px;
+  box-shadow: 0 14px 50px #213e1810;
+}
+.card h2 {
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+  font-weight: 650;
+  margin: 14px 0;
+}
+.description {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #8c9c7d;
+  max-width: 340px;
+}
+.instruction {
+  background: #f4f8ed;
+  border-radius: 13px;
+  padding: 18px;
+  margin: 23px 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.instruction strong {
+  font-size: 12px;
+  font-weight: 650;
+  color: #547a40;
+}
+.instruction p {
+  font-size: 12px;
+  color: #82966c;
+  line-height: 1.8;
+  margin-top: 4px;
+}
+.instruction button,
+.instruction a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 80px;
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+  font-weight: 650;
+  color: #56773e;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  flex-shrink: 0;
+  padding: 0;
+}
+.card fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.card label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #526d43;
+  margin-top: 20px;
+}
+.card input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #dde7d4;
+  background: #fcfdf9;
+  color: #395333;
+  font-size: 13px;
+}
+.card input::placeholder {
+  color: #b0b9a2;
+  font-size: 12px;
+}
+.help {
+  font-size: 12px;
+  color: #98a38b;
+  line-height: 1.75;
+  margin-top: 7px !important;
+}
+.submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  padding: 13px 20px;
+  border-radius: 11px;
+  border: 0;
+  background: #28583e;
+  color: #f4f8ec;
+  font-size: 13px;
+  font-weight: 650;
+  margin-top: 26px;
+}
+.submit span {
+  font-size: 21px;
+  line-height: 1;
+}
+.security {
+  font-size: 12px;
+  color: #91a080;
+  line-height: 1.85;
+  border-top: 1px solid #e7edde;
+  padding-top: 21px;
+  margin-top: 25px !important;
+}
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: #7c926a;
+  margin-top: 14px;
+}
+.bottomLinks a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.error {
+  margin-top: 15px !important;
+  padding: 11px 13px;
+  background: #fff5e7;
+  border: 1px solid #ead3ad;
+  color: #8d6739;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.footer {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px 0;
+  border-top: 1px solid #e3e9db;
+  font-size: 12px;
+  color: #98a28d;
+}
+@media (max-width: 1000px) {
+  .layout {
+    gap: 45px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .introduction h1 {
+    font-size: 39px;
+  }
+  .card {
+    padding: 30px 26px;
+  }
+  .page {
+    padding-inline: 28px;
+  }
+  .instruction {
+    display: block;
+  }
+  .instruction a,
+  .instruction button {
+    margin-top: 6px;
+  }
+  .introduction > p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 760px) {
+  .page {
+    padding: 0 20px;
+  }
+  .header {
+    height: 85px;
+  }
+  .brand {
+    font-size: 21px;
+    gap: 9px;
+  }
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+  .back {
+    font-size: 12px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 490px;
+    margin: 20px auto 35px;
+  }
+  .introduction {
+    padding: 0;
+  }
+  .introduction h1 {
+    font-size: 32px;
+    letter-spacing: -1.3px;
+    margin-top: 13px;
+  }
+  .introduction > p {
+    font-size: 12px;
+    max-width: 430px;
+  }
+  .illustration,
+  .steps,
+  .caption {
+    display: none;
+  }
+  .card {
+    padding: 26px 23px;
+    border-radius: 20px;
+  }
+  .card h2 {
+    font-size: 29px;
+  }
+  .description {
+    font-size: 12px;
+  }
+  .instruction {
+    display: flex;
+    margin-block: 20px;
+    padding: 15px;
+  }
+  .instruction p {
+    font-size: 12px;
+  }
+  .instruction strong {
+    font-size: 12px;
+  }
+  .card label {
+    font-size: 13px;
+  }
+  .card input {
+    font-size: 16px;
+  }
+  .help,
+  .security {
+    font-size: 12px;
+  }
+  .footer {
+    flex-direction: column;
+    font-size: 12px;
+    padding-block: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *:before,
+  .page *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,884 @@
+<!DOCTYPE html><html lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>AgriSense - Sahabat Petani Cerdas</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* Custom WhatsApp Chat BG Pattern and Smooth Animations */
+.wa-chat-bg {
+  background-color: #EFEAE2;
+  background-image: radial-gradient(#d3c9ba 0.75px, transparent 0.75px), radial-gradient(#d3c9ba 0.75px, #EFEAE2 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+@keyframes pulseDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.typing-dot-1 { animation: pulseDot 1.4s infinite ease-in-out; }
+.typing-dot-2 { animation: pulseDot 1.4s infinite ease-in-out 0.2s; }
+.typing-dot-3 { animation: pulseDot 1.4s infinite ease-in-out 0.4s; }
+.chat-fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chat-fade-in.chat-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#7c6632","on-secondary-fixed-variant":"#274e3c","on-surface-variant":"#3f4941","green-100":"#E5F2E8","secondary-container":"#c0edd4","on-background":"#111e17","inverse-primary":"#84d89e","primary-fixed":"#a0f5b8","surface-variant":"#d7e6da","green-700":"#207746","surface-tint":"#106c3d","surface-container-lowest":"#ffffff","secondary":"#3f6653","on-secondary-fixed":"#002114","surface-container-low":"#e8f8eb","on-error-container":"#93000a","tertiary-fixed-dim":"#e0c386","on-primary-fixed":"#00210e","error-container":"#ffdad6","surface-container-highest":"#d7e6da","ink-900":"#1E2B23","accent-gold":"#C0A56B","error":"#B42332","inverse-on-surface":"#e5f5e8","inverse-surface":"#26332b","primary-fixed-dim":"#84d89e","outline-variant":"#bfc9be","surface-container":"#e2f2e5","border":"#DCE8DF","green-800":"#18543A","green-050":"#F5FAF5","surface-dim":"#cfded2","on-tertiary-fixed":"#251a00","on-primary-container":"#a6fcbe","primary-container":"#207746","outline":"#6f7a70","secondary-fixed-dim":"#a5d0b8","primary":"#005d32","on-surface":"#111e17","on-error":"#ffffff","surface":"#eefdf0","tertiary-fixed":"#fddfa0","green-900":"#123B2A","tertiary":"#624e1d","surface-container-high":"#ddece0","on-tertiary":"#ffffff","on-primary":"#ffffff","surface-bright":"#eefdf0","on-tertiary-fixed-variant":"#584413","on-primary-fixed-variant":"#00522b","ink-600":"#59685D","on-tertiary-container":"#ffe6b6","secondary-fixed":"#c0edd4","surface":"#eefdf0","on-secondary-container":"#456d59","on-secondary":"#ffffff","surface-white":"#FFFFFF","warning":"#9A5B14"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","gutter-lg":"2rem",gutter:"1.5rem","space-4xl":"6rem","space-lg":"1.5rem","space-md":"1rem","space-2xl":"3rem","margin-sm":"1.25rem","margin-lg":"2rem","space-sm":"0.5rem","gutter-sm":"1rem","space-xs":"0.25rem",margin:"1.5rem","space-3xl":"4rem"},fontFamily:{"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},fontSize:{"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"30px",fontWeight:"400"}],"body-md":["16px",{lineHeight:"26px",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.015em",fontWeight:"700"}],"display-hero-mobile":["36px",{lineHeight:"42px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-sm":["14px",{lineHeight:"22px",fontWeight:"400"}],"label-lg":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-md":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"-0.005em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 left-0 right-0 z-50 pt-space-md px-margin lg:px-margin-lg pointer-events-none"><div class="max-w-7xl mx-auto flex items-center justify-between"><div class="pointer-events-auto h-20 w-full bg-surface-white/95 backdrop-blur-xl rounded-full px-space-lg flex items-center justify-between shadow-[0_10px_30px_-5px_rgba(18,59,42,0.08),0_4px_6px_-2px_rgba(18,59,42,0.03)]"><div class="flex items-center gap-space-md"><img alt="AgriSense Logo" class="h-11 w-11 rounded-lg object-contain shrink-0 shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7bvQ2Ffi743a4HDa7pCo8kMSAUXMBZDh21kQoknvSp9eLNNjhnOgpCiYkL2rRvN2Kh2TICAt_AFZesafNssuQh-wSOEJq_xWaMjSzR16jhVBgCLXJo4mgNKWx1G0llpX_2r_yCWALmHrdQM335-4ULgZscJtqj62RCJL2joMt94awNlGCXaZ1x3Yi74HonbeBjqDgbCWKZv2M5dLE0EKmfwgnVZpQtN1UpkAYx_kfkSBeiGG-G_o38KyRSv_imwaLzI"><span class="font-headline-sm text-headline-sm text-green-900 tracking-tight">AgriSense</span></div><nav class="hidden md:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md rounded-full"><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-label-md text-label-md rounded-full" data-path="manfaat" href="#manfaat">Manfaat</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-path="tentang" href="#tentang">Tentang</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-path="cara-kerja" href="#cara-kerja">Cara Kerja</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-path="kepercayaan" href="#kepercayaan">Kepercayaan</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface rounded-full transition-colors" data-path="faq" href="#faq">FAQ</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center gap-space-xs bg-primary-container hover:bg-green-800 text-on-primary font-label-md text-label-md px-space-lg py-space-sm rounded-full transition-all duration-200 shadow-[0_4px_12px_rgba(32,119,70,0.2)]" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">chat</span><span class="">Mulai via WhatsApp</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- S02: HERO SECTION -->
+<section class="relative w-full -mt-20 overflow-hidden bg-green-900">
+<div class="absolute inset-0 z-0">
+<img alt="Petani greenhouse menggunakan AgriSense melalui ponsel di kebun melon" class="w-full h-full object-cover object-center scale-105 transform motion-safe:transition-transform motion-safe:duration-1000" src="https://lh3.googleusercontent.com/aida/AEtjO1WeVMy80TUKvhOernMsd5Yf1Gy58rX2XLiYzPNQU5utxquC0H7TijCF9TzK24QYwKR_c9Z4DnMv8JHw3Z8xXGgNDjmuxH3jD_pNtMGLFpxJ1DN9dA6eOIPZy1MpS_cn3jmHR6FHxPMTlON_InCnxNoCM61QhQXViAhEcYjafjLwMmnI1PbuJ768Rpm_ossj2qnq84P1cJVu9XLajXQ4NNlMWQXmx8Bb_gpz32nfQ42YzyXm8HTVqz51GjLl">
+<div class="absolute inset-0 bg-gradient-to-r from-green-900/95 via-green-900/80 to-green-900/50 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-green-900 via-transparent to-black/30"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-margin lg:px-margin-lg pt-44 pb-32 lg:pt-48 lg:pb-36 flex flex-col items-start justify-center min-h-[680px]">
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-surface-white max-w-3xl leading-[1.12] tracking-tight mb-6">
+        Kelola kebun lebih mudah, cukup lewat <span class="text-primary-fixed">WhatsApp</span>.
+      </h1>
+<p class="font-body-lg text-body-md lg:text-body-lg text-surface-variant max-w-2xl mb-10 leading-relaxed font-normal">
+        Catat kegiatan pertanian, lihat informasi kebun, dan dapatkan bantuan memahami informasi tanaman melalui percakapan sederhana yang aman dan transparan.
+      </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-3 bg-primary-container hover:bg-green-800 text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-green-950/40 hover:-translate-y-0.5 active:translate-y-0" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span class="">Mulai via WhatsApp</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-surface-white/10 hover:bg-surface-white/20 text-surface-white font-label-lg text-label-lg px-8 py-4 rounded-xl backdrop-blur-md border border-surface-white/25 transition-all duration-200" href="#cara-kerja">
+<span class="">Lihat Cara Kerja</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+<div class="mt-12 flex items-center gap-6 text-surface-variant/80 text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="">Tanpa Install Aplikasi Tambahan</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">verified_user</span>
+<span class="">Data Kebun Terverifikasi Mandiri</span>
+</div>
+</div>
+</div>
+<!-- Organic Wave Divider -->
+<div aria-hidden="true" class="relative w-full overflow-hidden leading-none z-10 -mb-[1px]">
+<svg class="relative block w-full h-12 lg:h-20 text-green-050" preserveAspectRatio="none" viewBox="0 0 1200 120">
+<path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
+</svg>
+</div>
+</section>
+<!-- S03: TENTANG AGRISENSE -->
+<section class="w-full bg-green-050 relative pt-space-3xl lg:pt-space-4xl pb-0 overflow-hidden" id="tentang"><div aria-hidden="true" class="absolute inset-0 pointer-events-none"><div class="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[540px] rounded-full bg-gradient-to-b from-white/90 via-green-100/40 to-transparent blur-3xl opacity-80"></div><div class="absolute -left-24 top-1/4 w-96 h-96 rounded-full bg-green-700/5 blur-3xl"></div><div class="absolute -right-24 bottom-10 w-96 h-96 rounded-full bg-accent-gold/10 blur-3xl"></div></div><div class="max-w-7xl mx-auto px-margin lg:px-margin-lg relative z-10"><div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center"><div class="lg:col-span-4 flex flex-col justify-center space-y-6 z-10 pb-space-3xl lg:pb-space-4xl"><div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-white/95 backdrop-blur-md text-green-900 text-label-sm font-semibold w-fit border border-green-700/20 shadow-xs"><span class="material-symbols-outlined text-green-700 text-[18px]">eco</span><span class="">AgriSense</span></div><h2 class="font-headline-lg text-[32px] sm:text-[38px] lg:text-[44px] text-green-900 font-extrabold tracking-tight leading-[1.12]">Satu percakapan untuk memahami kebun Anda.</h2><p class="font-body-md text-ink-600 leading-relaxed max-w-md">Asisten digital untuk membantu Anda merawat dan mengembangkan kebun dengan lebih mudah.</p><div class="group flex items-center gap-4 p-4 rounded-2xl bg-surface-white border border-border/80 shadow-xs hover:shadow-md transition-all duration-300 max-w-sm"><div class="w-12 h-12 rounded-full bg-[#E5F7E9] flex items-center justify-center shrink-0 border border-green-700/10 shadow-xs"><div class="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs"><span class="material-symbols-outlined text-[20px]">chat</span></div></div><div class="leading-tight"><h4 class="font-label-md text-label-md text-green-900 font-bold mb-0.5">WhatsApp-First</h4><p class="font-body-sm text-[13px] text-ink-600">Akses AgriSense langsung di WhatsApp.</p></div></div><div><a class="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FFF275] to-[#FEE034] hover:brightness-105 text-green-900 font-label-md text-label-md px-7 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 font-bold border border-[#F4E185]/60" href="https://wa.me/" rel="noopener noreferrer" target="_blank"><span class="">Mulai Chat</span><span class="material-symbols-outlined text-[18px]">chevron_right</span></a></div></div><div class="lg:col-span-5 flex justify-center items-end self-end relative pt-6 pb-0 lg:py-0"><div class="relative w-full max-w-lg flex flex-col items-center justify-end"><div class="absolute -top-6 left-1/2 -translate-x-1/2 z-20 hidden sm:flex items-center gap-1.5 bg-surface-white/95 backdrop-blur-md border border-green-700/20 px-4 py-1.5 rounded-full shadow-md text-label-sm text-green-900 font-semibold"><span class="material-symbols-outlined text-green-700 text-[16px]">eco</span><span class="">Kebun Melon Anda</span><svg class="absolute -left-5 top-7 w-6 h-6 text-green-800/40 pointer-events-none" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 2C10 6 2 14 6 22"></path><circle cx="6" cy="22" fill="currentColor" r="1.5"></circle></svg></div><div class="w-full flex justify-center items-end overflow-visible"><img alt="Dua tangan memegang buah melon segar" class="w-full max-w-md lg:max-w-none lg:w-[480px] h-auto object-contain mx-auto select-none mix-blend-multiply block align-bottom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUNNA0gHk7_5N00BDeQkcnBLN3x5OYRD6F29QdDmM8C4Fen6cwDidnLSs6WSHrG0_c-fHDWF4yZeN72jjd3uCBy6Vx37hA3KcQErVDAC8u5wk8QKsxPVrHYu9WNfi6o0R2O4HaUDpoY-s5EBlnq-Hctg6tFNKC20Mf1N9SuLC75J6BPkGzVCMF0W9ipb3N74W7ypJYwJ8fhurRqIzikjN1gTzzYarUd1sMKkzFOa1OSaE-FOpTrKBrh8QiYXK_Q92K-0I" style="mix-blend-mode: multiply; filter: drop-shadow(0 25px 25px rgba(18,59,42,0.12)); image-rendering: -webkit-optimize-contrast;"></div></div></div><div class="lg:col-span-3 flex flex-col justify-center space-y-8 lg:pl-4 pb-space-3xl lg:pb-space-4xl"><div class="space-y-4"><div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#E5F7E9] to-[#d4eed9] border border-green-700/20 flex items-center justify-center text-green-900 shadow-xs"><span class="material-symbols-outlined text-[28px] text-green-900">eco</span></div><div><p class="font-label-sm text-[12px] text-ink-600/80 font-bold tracking-widest uppercase mb-2">TENTANG AGRISENSE</p><p class="font-body-sm text-ink-600 leading-relaxed">Membantu petani memahami kondisi kebun dan mengambil keputusan lebih baik dengan bantuan AI.</p></div></div><div class="flex items-center gap-3 pt-2"><div class="flex flex-col gap-2.5"><div class="w-24 h-14 rounded-xl overflow-hidden bg-surface-white border border-border shadow-2xs opacity-40"><img alt="Pratinjau tanaman daun melon kebun" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsI1y1YR3BUspQHpvrTKDha0anCUWLdTBTMnIHJN8xE4XL-QpjZHW0-PtiJPLQQnaadImhI7fS2YNUgY6K8-joOyjW3Ze3ChbICRNzJAXbhvFbPGcHc7DtIOfBonIPhfQYCshQQs4pkmnAR9gpPQzBSqjmJJNpsvxTjk6J8uSxYBrWwnzQZ9eId4GwFr5sTL52g1lNegRUaOAUTjePxKf0LYe192Fk_cuav42gRx5lDjPF1L16gfLe_CXDNqZea3hf5rE"></div><div class="w-28 h-16 rounded-xl overflow-hidden bg-surface-white border-2 border-green-900 shadow-md p-0.5 relative"><img alt="Pratinjau aktif daun &amp; sulur melon kebun" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsI1y1YR3BUspQHpvrTKDha0anCUWLdTBTMnIHJN8xE4XL-QpjZHW0-PtiJPLQQnaadImhI7fS2YNUgY6K8-joOyjW3Ze3ChbICRNzJAXbhvFbPGcHc7DtIOfBonIPhfQYCshQQs4pkmnAR9gpPQzBSqjmJJNpsvxTjk6J8uSxYBrWwnzQZ9eId4GwFr5sTL52g1lNegRUaOAUTjePxKf0LYe192Fk_cuav42gRx5lDjPF1L16gfLe_CXDNqZea3hf5rE"></div><div class="w-24 h-14 rounded-xl overflow-hidden bg-surface-white border border-border shadow-2xs opacity-40"><img alt="Pratinjau batang kebun melon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsI1y1YR3BUspQHpvrTKDha0anCUWLdTBTMnIHJN8xE4XL-QpjZHW0-PtiJPLQQnaadImhI7fS2YNUgY6K8-joOyjW3Ze3ChbICRNzJAXbhvFbPGcHc7DtIOfBonIPhfQYCshQQs4pkmnAR9gpPQzBSqjmJJNpsvxTjk6J8uSxYBrWwnzQZ9eId4GwFr5sTL52g1lNegRUaOAUTjePxKf0LYe192Fk_cuav42gRx5lDjPF1L16gfLe_CXDNqZea3hf5rE"></div></div><div class="flex flex-col items-center justify-center h-28"><div class="w-1.5 h-6 rounded-full bg-green-900 shadow-xs"></div></div></div></div></div></div></section>
+<!-- S04: FITUR & MANFAAT UTAMA -->
+<section class="w-full bg-surface py-space-3xl lg:py-space-4xl relative overflow-hidden" id="manfaat">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none">
+<div class="absolute -left-20 top-1/4 w-80 h-80 rounded-full bg-green-100/60 blur-3xl"></div>
+<div class="absolute -right-20 bottom-1/4 w-96 h-96 rounded-full bg-green-100/50 blur-3xl"></div>
+</div>
+<div class="group relative flex flex-col items-center text-center p-4 lg:p-6 transition-all duration-300">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/70 text-on-secondary-fixed-variant text-label-sm font-semibold mb-4 border border-green-700/10 shadow-2xs">
+<span class="material-symbols-outlined text-[16px] text-green-700">autorenew</span>
+<span class="">Cara Kerja</span>
+</div>
+<h2 class="font-headline-lg text-[32px] sm:text-[38px] lg:text-[44px] text-green-900 font-extrabold tracking-tight leading-[1.15] mb-4">
+        Mulai AgriSense dalam 3 langkah
+      </h2>
+<p class="font-body-md text-ink-600 leading-relaxed max-w-xl mx-auto">
+        Percakapan sederhana untuk membantu pencatatan, pemantauan, dan pemahaman kebun Anda.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8"><!-- Step 1: Mulai chat -->
+<div class="group relative flex flex-col items-center text-center p-8 lg:p-9 rounded-[32px] bg-surface-white border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+  <div class="relative w-36 h-36 mb-6 flex items-center justify-center">
+    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-green-100 to-green-050 opacity-90"></div>
+    <svg class="relative w-28 h-28" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 62C20 40 36 24 58 24C80 24 98 40 98 62C98 84 80 98 58 98C49 98 41 95 34 90L20 95L25 82C23 76 22 69 22 62Z" fill="#D9FDD3" opacity="0.55"></path>
+      <rect fill="#ffffff" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.04))" height="38" rx="14" stroke="#c0edd4" stroke-width="2.5" width="52" x="44" y="42"></rect>
+      <circle cx="58" cy="61" fill="#3f6653" r="3.5"></circle>
+      <circle cx="70" cy="61" fill="#3f6653" r="3.5"></circle>
+      <circle cx="82" cy="61" fill="#3f6653" r="3.5"></circle>
+      <path d="M24 48C24 35.8497 33.8497 26 46 26H58C70.1503 26 80 35.8497 80 48C80 60.1503 70.1503 70 58 70H40L26 78L28 67C25.5 61.5 24 55 24 48Z" fill="#18543A"></path>
+      <circle cx="42" cy="48" fill="#ffffff" r="3.5"></circle>
+      <circle cx="52" cy="48" fill="#ffffff" r="3.5"></circle>
+      <circle cx="62" cy="48" fill="#ffffff" r="3.5"></circle>
+      <path d="M82 28C84 20 92 18 96 18C96 24 92 30 86 32C84 32.5 83 30 82 28Z" fill="#207746"></path>
+      <path d="M84 28C81 22 75 22 72 23C73 29 78 33 84 32C84.5 31 84.5 29.5 84 28Z" fill="#84d89e"></path>
+    </svg>
+  </div>
+  <h3 class="font-headline-sm text-headline-sm text-green-900 font-bold mb-3 tracking-tight">Mulai chat</h3>
+  <p class="font-body-md text-ink-600 leading-relaxed text-[15px]">
+    Kirim pesan untuk memulai pendampingan aktivitas kebun secara praktis.
+  </p>
+</div>
+<!-- Step 2: Catat kebun -->
+<div class="group relative flex flex-col items-center text-center p-8 lg:p-9 rounded-[32px] bg-surface-white border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+  <div class="relative w-36 h-36 mb-6 flex items-center justify-center">
+    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-green-100 to-green-050 opacity-90"></div>
+    <svg class="relative w-28 h-28" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#ffffff" filter="drop-shadow(0 6px 12px rgba(18,59,42,0.06))" height="74" rx="12" stroke="#DCE8DF" stroke-width="2.5" width="60" x="30" y="26"></rect>
+      <rect fill="#207746" height="14" rx="6" width="32" x="44" y="18"></rect>
+      <circle cx="60" cy="25" fill="#ffffff" r="3"></circle>
+      <circle cx="44" cy="46" fill="#E5F2E8" r="5.5"></circle>
+      <path d="M41.5 46L43.5 48L47 44" stroke="#207746" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      <line stroke="#18543A" stroke-linecap="round" stroke-width="2.5" x1="54" x2="76" y1="46" y2="46"></line>
+      <circle cx="44" cy="62" fill="#E5F2E8" r="5.5"></circle>
+      <path d="M41.5 62L43.5 64L47 60" stroke="#207746" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      <line stroke="#18543A" stroke-linecap="round" stroke-width="2.5" x1="54" x2="76" y1="62" y2="62"></line>
+      <circle cx="44" cy="78" fill="#E5F2E8" r="5.5"></circle>
+      <path d="M41.5 78L43.5 80L47 76" stroke="#207746" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      <line stroke="#18543A" stroke-linecap="round" stroke-width="2.5" x1="54" x2="70" y1="78" y2="78"></line>
+      <path d="M84 76C90 70 94 72 96 76C94 82 88 84 82 82C82 80 83 78 84 76Z" fill="#207746"></path>
+      <path d="M82 82C86 86 88 92 84 94C80 94 76 88 78 82C80 82 81 82 82 82Z" fill="#84d89e"></path>
+    </svg>
+  </div>
+  <h3 class="font-headline-sm text-headline-sm text-green-900 font-bold mb-3 tracking-tight">Catat kebun</h3>
+  <p class="font-body-md text-ink-600 leading-relaxed text-[15px]">
+    Tinjau ringkasan lalu konfirmasi agar catatan tersimpan dengan rapi.
+  </p>
+</div>
+<!-- Step 3: Dapatkan insight -->
+<div class="group relative flex flex-col items-center text-center p-8 lg:p-9 rounded-[32px] bg-surface-white border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+  <div class="relative w-36 h-36 mb-6 flex items-center justify-center">
+    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-green-100 to-green-050 opacity-90"></div>
+    <svg class="relative w-28 h-28" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="84" cy="36" fill="#C0A56B" opacity="0.8" r="12"></circle>
+      <path d="M84 18V24M84 48V54M66 36H72M96 36H102M71 23L75 27M93 45L97 49M71 49L75 45M93 23L97 27" stroke="#C0A56B" stroke-linecap="round" stroke-width="2"></path>
+      <path d="M34 88C34 82 46 78 60 78C74 78 86 82 86 88C86 94 74 96 60 96C46 96 34 94 34 88Z" fill="#3f4941" opacity="0.2"></path>
+      <ellipse cx="60" cy="86" fill="#1E2B23" opacity="0.6" rx="24" ry="7"></ellipse>
+      <path d="M60 84V52" stroke="#18543A" stroke-linecap="round" stroke-width="3.5"></path>
+      <path d="M60 62C50 56 42 60 38 68C48 70 56 68 60 62Z" fill="#207746"></path>
+      <path d="M60 52C70 44 80 48 84 56C74 60 64 58 60 52Z" fill="#84d89e"></path>
+      <path d="M58 48C58 42 62 38 66 38C66 44 62 48 58 48Z" fill="#207746"></path>
+    </svg>
+  </div>
+  <h3 class="font-headline-sm text-headline-sm text-green-900 font-bold mb-3 tracking-tight">Dapatkan insight</h3>
+  <p class="font-body-md text-ink-600 leading-relaxed text-[15px]">
+    Terima informasi tanaman, cuaca, dan budidaya yang relevan.
+  </p>
+</div></div>
+</div>
+</section>
+<!-- S05: CARA KERJA VIA WHATSAPP -->
+
+<!-- S06: CONTOH PERCAKAPAN INTERAKTIF (WHATSAPP MOCKUP) -->
+<section class="w-full bg-surface-white py-space-3xl lg:py-space-4xl overflow-hidden">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Teks Narasi Kiri -->
+<div class="lg:col-span-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-800 text-label-sm font-label-sm mb-4">
+<span class="">Simulasi Interaktif WhatsApp</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-green-900 tracking-tight mb-4">
+            Setiap catatan tetap dalam kendali Anda.
+          </h2>
+<p class="font-body-lg text-body-md lg:text-body-lg text-ink-600 mb-6 leading-relaxed">
+            Saksikan simulasi percakapan nyata di samping: bagaimana AgriSense AI mendampingi pemeriksaan gejala daun dengan prinsip observasi beretika, merangkum draf kegiatan, hingga menunggu konfirmasi eksplisit petani sebelum menyimpan data ke jurnal kebun.
+          </p>
+<div class="p-5 rounded-2xl bg-green-050 border border-border space-y-3 mb-6">
+<div class="flex items-center gap-2 text-green-900 font-label-md text-label-md">
+<span class="material-symbols-outlined text-green-700 text-[20px]">security</span>
+<span class="">Prinsip Perlindungan Penulisan &amp; Etika AI</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-600">
+              Format perintah pencatatan langsung diubah menjadi draf ringkas yang membutuhkan konfirmasi balasan: <strong class="text-green-800">YA</strong>, <strong class="text-secondary">UBAH</strong>, atau <strong class="text-ink-600">BATAL</strong>. Jawaban agronomi menyajikan fakta pengamatan tanpa rekayasa spekulatif.
+            </p>
+</div>
+<!-- Fitur Interaktif Kontrol Simulator -->
+<div class="bg-surface-container-low p-4 rounded-2xl border border-border flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-700 opacity-75" id="live-pulse"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-700"></span>
+</span>
+<span class="font-label-sm text-label-sm text-green-900 font-bold" id="simulation-status-text">Langkah 6/6: Konfirmasi balasan diterima &amp; data tersimpan aman</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Jeda simulasi" class="h-8 w-8 rounded-lg bg-surface-white text-green-900 hover:bg-green-100 flex items-center justify-center border border-border transition-all" id="btn-toggle-play" type="button">
+<span class="material-symbols-outlined text-[18px]" id="play-pause-icon">pause</span>
+</button>
+<button aria-label="Ulangi simulasi dari awal" class="h-8 w-8 rounded-lg bg-surface-white text-green-900 hover:bg-green-100 flex items-center justify-center border border-border transition-all" id="btn-restart" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</div>
+<!-- Step progress bars -->
+<div class="grid grid-cols-6 gap-1.5 w-full">
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-1"></div>
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-2"></div>
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-3"></div>
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-4"></div>
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-5"></div>
+<div class="h-1.5 rounded-full bg-primary transition-all duration-300" id="step-bar-6"></div>
+</div>
+</div>
+<div class="mt-4 text-ink-600 font-body-sm text-body-sm italic flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">info</span>
+<span class="">Simulasi dinamis interaktif; mencerminkan respon Meta WhatsApp Cloud API AgriSense.</span>
+</div>
+</div>
+<!-- Phone Mockup Kanan (Ultra-HD iPhone Titanium + OLED Display) -->
+<div class="lg:col-span-7 flex justify-center">
+<div class="relative mx-auto w-full max-w-[375px] sm:max-w-[400px]">
+<!-- iPhone Outer Chassis (Titanium Natural Finish + Glow & Reflection) -->
+<div class="relative rounded-[54px] bg-gradient-to-b from-[#383d44] via-[#1f2429] to-[#12161a] p-[12px] shadow-[0_30px_90px_-20px_rgba(18,59,42,0.35),0_15px_30px_-10px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.2),inset_0_1px_1px_rgba(255,255,255,0.4)]">
+<!-- Side Buttons (Mute switch, Volume, Power) -->
+<div class="absolute -left-[14px] top-[115px] h-8 w-[3.5px] rounded-l-md bg-gradient-to-r from-[#20252b] to-[#4b5563] shadow-xs"></div>
+<div class="absolute -left-[14px] top-[162px] h-13 w-[3.5px] rounded-l-md bg-gradient-to-r from-[#20252b] to-[#4b5563] shadow-xs"></div>
+<div class="absolute -left-[14px] top-[224px] h-13 w-[3.5px] rounded-l-md bg-gradient-to-r from-[#20252b] to-[#4b5563] shadow-xs"></div>
+<div class="absolute -right-[14px] top-[150px] h-18 w-[3.5px] rounded-r-md bg-gradient-to-l from-[#20252b] to-[#4b5563] shadow-xs"></div>
+<!-- Inner Bezel (True Black OLED Border) -->
+<div class="relative flex flex-col overflow-hidden rounded-[44px] bg-[#000000] border-[4px] border-[#0a0f12] shadow-inner min-h-[690px] h-[690px]">
+<!-- Status Bar & Dynamic Island -->
+<div class="relative z-30 flex items-center justify-between bg-green-900 px-7 pt-3.5 pb-2 text-surface-white">
+<span class="text-[14px] font-semibold tracking-tight text-white/95">09:41</span>
+<!-- Dynamic Island -->
+<div class="absolute left-1/2 top-3 -translate-x-1/2 flex items-center justify-center">
+<div class="h-[24px] w-[105px] rounded-full bg-black flex items-center justify-between px-3 shadow-md border border-white/5">
+<div class="h-2.5 w-2.5 rounded-full bg-[#111827] border border-white/10 flex items-center justify-center">
+<div class="h-1 w-1 rounded-full bg-blue-900/40"></div>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="h-2 w-2 rounded-full bg-[#052e16] border border-green-500/50"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-green-400"></div>
+</div>
+</div>
+</div>
+<!-- Cellular, WiFi, Battery Icons -->
+<div class="flex items-center gap-1.5 text-white/95">
+<span class="text-[11px] font-bold tracking-wider mr-0.5">5G</span>
+<span class="material-symbols-outlined text-[15px]">wifi</span>
+<div class="flex items-center gap-0.5">
+<span class="text-[10px] font-semibold">98%</span>
+<div class="w-5 h-2.5 border border-white/80 rounded-xs p-0.5 flex items-center">
+<div class="h-full w-full bg-white rounded-2xs"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- WhatsApp Brand Header Bar -->
+<div class="relative z-20 flex items-center justify-between bg-green-900 px-4 py-2.5 text-on-primary border-b border-green-800/90 shadow-md">
+<div class="flex items-center gap-2">
+<button aria-label="Kembali" class="text-green-100 hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<div class="relative">
+<img alt="AgriSense Official Profile" class="h-10 w-10 rounded-full object-cover border-2 border-white/30 bg-surface-white p-0.5 shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7bvQ2Ffi743a4HDa7pCo8kMSAUXMBZDh21kQoknvSp9eLNNjhnOgpCiYkL2rRvN2Kh2TICAt_AFZesafNssuQh-wSOEJq_xWaMjSzR16jhVBgCLXJo4mgNKWx1G0llpX_2r_yCWALmHrdQM335-4ULgZscJtqj62RCJL2joMt94awNlGCXaZ1x3Yi74HonbeBjqDgbCWKZv2M5dLE0EKmfwgnVZpQtN1UpkAYx_kfkSBeiGG-G_o38KyRSv_imwaLzI">
+<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 border-2 border-green-900"></span>
+</div>
+<div class="leading-tight">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-[14px] font-bold text-white tracking-tight">AgriSense AI</span>
+<span class="material-symbols-outlined text-[#25D366] text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-[11px] text-green-100/80 block font-normal" id="phone-contact-subtitle">Online • Asisten Terverifikasi</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-green-100">
+<button aria-label="Video Call" class="hover:text-white transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">videocam</span></button>
+<button aria-label="Telepon" class="hover:text-white transition-colors" type="button"><span class="material-symbols-outlined text-[19px]">call</span></button>
+<button aria-label="Menu WhatsApp" class="hover:text-white transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</div>
+<!-- Dynamic Chat Conversation Canvas (WhatsApp Pattern Wallpaper) -->
+<div class="wa-chat-bg flex-1 p-3.5 flex flex-col gap-2.5 overflow-y-auto text-[13px] relative selection:bg-green-200" id="chat-stream-container">
+<!-- Sticky Date Stamp -->
+<div class="mx-auto my-0.5 bg-surface-white/90 backdrop-blur-md px-3.5 py-1 rounded-full text-[11px] text-ink-600 font-label-sm shadow-xs border border-border/40">
+            HARI INI
+          </div>
+<!-- Encryption Notice -->
+<div class="mx-auto max-w-[88%] bg-[#FFF3C4]/85 text-ink-900/80 px-3 py-1.5 rounded-lg text-[10px] text-center leading-snug border border-[#F4E185]/60 shadow-2xs mb-1">
+<span class="material-symbols-outlined text-[12px] inline align-text-bottom text-tertiary">lock</span>
+            Pesan terenkripsi end-to-end. Akun resmi AgriSense AI menggunakan jalur terverifikasi Meta Cloud.
+          </div>
+<!-- Step 1: Pesan Petani (Foto + Pertanyaan Daun Melon) -->
+<div class="chat-fade-in self-end max-w-[88%] bg-[#D9FDD3] text-ink-900 rounded-2xl rounded-tr-xs p-2 shadow-xs border border-green-700/10 chat-visible" id="step-bubble-1" style="display: block;">
+<!-- Thumbnail Foto Daun Melon -->
+<div class="relative rounded-xl overflow-hidden mb-1.5 border border-black/5 bg-green-900/10">
+<img alt="Foto Daun Melon Bercak" class="w-full h-28 object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida/AEtjO1WeVMy80TUKvhOernMsd5Yf1Gy58rX2XLiYzPNQU5utxquC0H7TijCF9TzK24QYwKR_c9Z4DnMv8JHw3Z8xXGgNDjmuxH3jD_pNtMGLFpxJ1DN9dA6eOIPZy1MpS_cn3jmHR6FHxPMTlON_InCnxNoCM61QhQXViAhEcYjafjLwMmnI1PbuJ768Rpm_ossj2qnq84P1cJVu9XLajXQ4NNlMWQXmx8Bb_gpz32nfQ42YzyXm8HTVqz51GjLl">
+<div class="absolute bottom-1.5 left-1.5 bg-black/60 backdrop-blur-xs text-white text-[10px] px-2 py-0.5 rounded-md flex items-center gap-1 font-label-sm">
+<span class="material-symbols-outlined text-[12px]">photo_camera</span>
+<span class="">Foto Kebun Blok B</span>
+</div>
+</div>
+<p class="leading-snug px-1 text-[12.5px] text-ink-900">
+              Tanya daun melon blok B ada bercak kuning kecokelatan, ini kenapa ya min?
+            </p>
+<div class="flex items-center justify-end gap-1 mt-1 pr-1">
+<span class="text-[10px] text-ink-600/70">09:41</span>
+<span class="material-symbols-outlined text-[14px] text-[#53bdeb]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Typing Indicator (Langkah 2) -->
+<div class="chat-fade-in self-start max-w-[55%] bg-surface-white text-ink-900 rounded-2xl rounded-tl-xs px-3.5 py-2.5 shadow-xs border border-border/80 flex items-center gap-2" id="step-typing-indicator" style="display: none;">
+<span class="text-[11px] text-ink-600 italic">AgriSense menganalisis data...</span>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-green-700 typing-dot-1"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-green-700 typing-dot-2"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-green-700 typing-dot-3"></span>
+</div>
+</div>
+<!-- Step 3: Jawaban Beretika AI AgriSense (Observasi vs Kemungkinan) -->
+<div class="chat-fade-in self-start max-w-[92%] bg-surface-white text-ink-900 rounded-2xl rounded-tl-xs px-3.5 py-3 shadow-xs border border-border/80 space-y-2 chat-visible" id="step-bubble-3" style="display: block;">
+<div class="flex items-center justify-between border-b border-border/60 pb-1.5">
+<div class="flex items-center gap-1 text-green-800 font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[15px] text-green-700">psychology</span>
+<span class="">HASIL OBSERVASI TANAMAN</span>
+</div>
+<span class="text-[10px] bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-semibold">Greenhouse Melon</span>
+</div>
+<div class="space-y-1.5 text-[12px] leading-relaxed text-ink-900">
+<div class="p-1.5 bg-green-050 rounded-lg border border-border/60">
+<p class=""><span class="font-bold text-green-900">🌾 Observasi Awal:</span> Terlihat pola bercak bersudut (angular lesions) dengan batas tepi kuning pada helaian daun aktif.</p>
+</div>
+<div class="p-1.5 bg-[#FFF9E6] rounded-lg border border-[#F0E2B6]">
+<p class=""><span class="font-bold text-warning">⚠️ Kemungkinan:</span> Gejala awal embun bulu (<em>Downy Mildew / Pseudoperonospora cubensis</em>) dipicu kelembapan tinggi malam hari.</p>
+</div>
+<div class="p-1.5 bg-surface-container-low rounded-lg border border-border/60">
+<p class=""><span class="font-bold text-green-900">🔍 Langkah Aman:</span> Periksa bagian bawah daun apakah ada spora kelabu pagi ini. Hindari semprot kimia keras sebelum konfirmasi PPL.</p>
+</div>
+</div>
+<div class="pt-1 flex items-center gap-1.5 text-[10px] text-ink-600 border-t border-border/40">
+<span class="material-symbols-outlined text-[12px] text-tertiary">verified_user</span>
+<span class=""><strong>Label Etika:</strong> Panduan pendamping budidaya, bukan diagnosis mutlak lapangan.</span>
+</div>
+<div class="flex items-center justify-end gap-1 pt-0.5">
+<span class="text-[10px] text-ink-600/70">09:41</span>
+</div>
+</div>
+<!-- Step 4: Perintah Catat Petani -->
+<div class="chat-fade-in self-end max-w-[88%] bg-[#D9FDD3] text-ink-900 rounded-2xl rounded-tr-xs px-3.5 py-2 shadow-xs border border-green-700/10 chat-visible" id="step-bubble-4" style="display: block;">
+<p class="leading-snug text-[12.5px]">
+              CATAT semprot fungisida hayati Trichoderma sore ini
+            </p>
+<div class="flex items-center justify-end gap-1 mt-0.5">
+<span class="text-[10px] text-ink-600/70">09:42</span>
+<span class="material-symbols-outlined text-[14px] text-[#53bdeb]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Step 5: Draft Konfirmasi AgriSense -->
+<div class="chat-fade-in self-start max-w-[92%] bg-surface-white text-ink-900 rounded-2xl rounded-tl-xs px-3.5 py-3 shadow-xs border border-border/80 chat-visible" id="step-bubble-5" style="display: block;">
+<div class="flex items-center gap-1.5 text-green-800 font-label-sm text-[11px] font-bold mb-1.5">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+<span class="">DRAFT CATATAN KEGIATAN KEBUN</span>
+</div>
+<p class="text-[11.5px] text-ink-600 mb-2 leading-relaxed">
+              Saya siapkan draf catatan. Mohon verifikasi kelengkapan:
+            </p>
+<div class="bg-green-050 rounded-xl p-2 border border-border mb-2.5 space-y-1 text-[11.5px]">
+<div class="flex justify-between"><span class="text-ink-600">Kegiatan:</span><span class="font-semibold text-green-900">Semprot Trichoderma</span></div>
+<div class="flex justify-between"><span class="text-ink-600">Target:</span><span class="font-semibold text-green-900">Blok B (Greenhouse 2)</span></div>
+<div class="flex justify-between"><span class="text-ink-600">Waktu:</span><span class="font-semibold text-green-900">Hari ini (16.00 WIB)</span></div>
+</div>
+<p class="text-[11px] text-ink-600 mb-2">Pilih respon di bawah untuk melanjutkan:</p>
+<div class="grid grid-cols-3 gap-1.5 pt-0.5" id="interactive-choice-buttons">
+<button class="py-1.5 px-2 bg-green-700 text-white hover:bg-green-800 rounded-lg text-center font-bold text-[11px] transition-transform active:scale-95 shadow-xs flex items-center justify-center gap-1" id="demo-btn-ya" type="button">
+<span class="">YA</span>
+<span class="material-symbols-outlined text-[13px]">check</span>
+</button>
+<button class="py-1.5 px-2 bg-secondary-container text-on-secondary-fixed rounded-lg text-center font-bold text-[11px] shadow-xs border border-green-700/20" type="button">UBAH</button>
+<button class="py-1.5 px-2 bg-gray-100 text-ink-600 rounded-lg text-center font-bold text-[11px] shadow-xs border border-border" type="button">BATAL</button>
+</div>
+<div class="flex items-center justify-end gap-1 mt-1.5">
+<span class="text-[10px] text-ink-600/70">09:42</span>
+</div>
+</div>
+<!-- Step 6: Konfirmasi "YA ✅" & Respon Sukses -->
+<div class="chat-fade-in self-end max-w-[85%] bg-[#D9FDD3] text-ink-900 rounded-2xl rounded-tr-xs px-3.5 py-1.5 shadow-xs border border-green-700/10 chat-visible" id="step-bubble-6-user" style="display: block;">
+<p class="font-bold text-green-900 text-[13px] flex items-center gap-1">
+<span class="">YA</span>
+<span class="material-symbols-outlined text-[15px] text-green-700" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</p>
+<div class="flex items-center justify-end gap-1 mt-0.5">
+<span class="text-[10px] text-ink-600/70">09:42</span>
+<span class="material-symbols-outlined text-[14px] text-[#53bdeb]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<div class="chat-fade-in self-start max-w-[90%] bg-surface-white text-ink-900 rounded-2xl rounded-tl-xs px-3.5 py-2.5 shadow-xs border border-green-700/30 bg-gradient-to-r from-green-050 to-white chat-visible" id="step-bubble-6-bot" style="display: block;">
+<div class="flex items-center gap-1.5 text-green-800 font-label-md text-[12px] font-bold">
+<span class="material-symbols-outlined text-[16px] text-green-700" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="">Catatan Tersimpan!</span>
+</div>
+<p class="text-[11.5px] text-ink-600 mt-1 leading-snug">
+              Kegiatan telah berhasil dibukukan ke jurnal mandiri kebun Anda. Riwayat dapat Anda panggil kapan saja.
+            </p>
+<div class="flex items-center justify-end gap-1 mt-1">
+<span class="text-[10px] text-ink-600/70">09:42</span>
+</div>
+</div>
+</div>
+<!-- WhatsApp Input Footer Bar -->
+<div class="bg-[#F0F2F5] px-3 py-2 flex items-center gap-2 border-t border-black/5 z-20">
+<button aria-label="Emoticon" class="text-ink-600 hover:text-green-700" type="button">
+<span class="material-symbols-outlined text-[22px]">sentiment_satisfied</span>
+</button>
+<button aria-label="Lampirkan foto" class="text-ink-600 hover:text-green-700" type="button">
+<span class="material-symbols-outlined text-[21px]">add</span>
+</button>
+<div class="flex-1 bg-surface-white rounded-full px-3.5 py-1.5 text-[12px] text-ink-600 border border-black/10 flex items-center justify-between shadow-2xs">
+<span class="truncate text-ink-600/80" id="interactive-input-text">Ketik pesan atau perintah catatan...</span>
+<span class="material-symbols-outlined text-[18px] text-ink-600/60">photo_camera</span>
+</div>
+<button aria-label="Kirim Suara atau Pesan" class="w-8 h-8 rounded-full bg-green-700 text-white flex items-center justify-center shrink-0 shadow-sm hover:bg-green-800 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]" id="interactive-send-icon">mic</span>
+</button>
+</div>
+<!-- iOS Home Bar Indicator -->
+<div class="bg-[#F0F2F5] pb-2.5 pt-1 flex justify-center z-20">
+<div class="h-1 w-32 rounded-full bg-ink-900/60"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- S07: PENGETAHUAN YANG BERTANGGUNG JAWAB (AI BERETIKA) -->
+<section class="w-full bg-green-050 py-space-3xl lg:py-space-4xl">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-lg">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-800 text-label-sm font-label-sm mb-3">
+<span class="">AI &amp; Transparansi</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-green-900 tracking-tight mb-4">
+          Informasi yang jelas, termasuk saat jawabannya belum pasti.
+        </h2>
+<p class="font-body-md text-body-md text-ink-600">
+          Kami menolak berspekulasi. Setiap saran teknis berakar pada dokumen agronomi teruji dengan pemisahan tegas antara fakta dan kemungkinan.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="p-8 rounded-3xl bg-surface-white border border-border shadow-sm">
+<div class="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[26px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-green-900 mb-3">Konteks yang tersedia</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+            Menyelaraskan jawaban dengan umur tanaman, luas lahan, dan fase fenologis kebun yang terdaftar di sistem.
+          </p>
+</div>
+<div class="p-8 rounded-3xl bg-surface-white border border-border shadow-sm">
+<div class="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[26px]">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-green-900 mb-3">Observasi vs kemungkinan</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+            Secara jujur membedakan apa yang tampak nyata pada foto dengan dugaan sementara hama atau penyakit.
+          </p>
+</div>
+<div class="p-8 rounded-3xl bg-surface-white border border-border shadow-sm">
+<div class="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-green-900 mb-3">Sumber &amp; batasan</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+            Menyebutkan dokumen rujukan yang sah dan menolak memberikan dosis buatan jika rujukan ilmiah belum memadai.
+          </p>
+</div>
+</div>
+<!-- Callout Banner -->
+<div class="p-6 rounded-2xl bg-surface-white border border-border shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-green-900">Label Penting</h4>
+<p class="font-body-sm text-body-sm text-ink-600">Panduan informasi pendamping budidaya, bukan diagnosis ahli mutlak di lapangan.</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-050 text-green-800 font-label-md text-label-md shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="">Pilot Pengetahuan Melon Teruji</span>
+</div>
+</div>
+</div>
+</section>
+<!-- S08: KEPERCAYAAN, PRIVASI, & BATAS LAYANAN -->
+<section class="w-full bg-surface-white py-space-3xl lg:py-space-4xl" id="kepercayaan">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-800 text-label-sm font-label-sm mb-3">
+<span class="">Keamanan &amp; Privasi</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-green-900 tracking-tight mb-4">
+            Kepercayaan Anda adalah amanah utama kami.
+          </h2>
+<p class="font-body-lg text-body-md lg:text-body-lg text-ink-600 mb-6 leading-relaxed">
+            Data kebun, catatan keuangan, dan dokumentasi foto adalah milik penuh Anda. Kami menetapkan perimeter proteksi data ketat sejak pesan pertama.
+          </p>
+<div class="p-5 rounded-2xl bg-green-050 border border-border space-y-2">
+<div class="flex items-center gap-2 text-green-900 font-label-md text-label-md">
+<span class="material-symbols-outlined text-green-700 text-[18px]">gavel</span>
+<span class="">Kepatuhan Transparansi</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-600">
+              Pengelolaan privasi dirancang sesuai dengan tata kelola etika data personal Indonesia dan ketentuan Meta Cloud WhatsApp API.
+            </p>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-surface-white border border-border shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">person_pin</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-green-900 mb-2">Hak Akses Mandiri</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+                Petani hanya dapat mengakses dan meminta rangkuman atas data kebun miliknya sendiri yang terverifikasi.
+              </p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-white border border-border shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-green-900 mb-2">Konfirmasi Tertulis</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+                Tidak ada aksi penulisan data yang dieksekusi sebelum ada balasan 'YA' yang tegas dari nomor pemilik.
+              </p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-white border border-border shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-green-900 mb-2">Batasan KUR</h3>
+<p class="font-body-sm text-body-sm text-ink-600 leading-relaxed">
+                Pencatatan KUR hanya untuk peninjauan dokumen internal; bukan persetujuan atau pengiriman ke pihak bank.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- S09: FAQ ACCORDION -->
+<section class="w-full bg-green-050 py-space-3xl lg:py-space-4xl" id="faq">
+<div class="max-w-4xl mx-auto px-margin lg:px-margin-lg">
+<div class="text-center mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-800 text-label-sm font-label-sm mb-3">
+<span class="">Pertanyaan Umum</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-green-900 tracking-tight mb-4">
+          Pertanyaan yang sering diajukan.
+        </h2>
+<p class="font-body-md text-body-md text-ink-600">
+          Temukan jawaban jelas mengenai cara kerja, privasi, dan batasan operasional platform AgriSense.
+        </p>
+</div>
+<div class="space-y-4" id="faq-container">
+<!-- Item 1 -->
+<div class="rounded-2xl bg-surface-white border border-border overflow-hidden transition-colors">
+<button aria-expanded="false" class="faq-toggle w-full px-6 py-5 flex items-center justify-between gap-4 text-left font-label-lg text-label-lg text-green-900 hover:text-green-700 transition-colors" type="button">
+<span class="">Apakah harus memasang aplikasi baru di handphone?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-ink-600 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1 text-ink-600 font-body-md text-body-md leading-relaxed border-t border-border/50">
+            Tidak perlu. AgriSense beroperasi penuh melalui WhatsApp resmi yang sudah Anda miliki di ponsel Anda. Tidak memerlukan download aplikasi tambahan di Play Store mau pun App Store.
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="rounded-2xl bg-surface-white border border-border overflow-hidden transition-colors">
+<button aria-expanded="false" class="faq-toggle w-full px-6 py-5 flex items-center justify-between gap-4 text-left font-label-lg text-label-lg text-green-900 hover:text-green-700 transition-colors" type="button">
+<span class="">Apakah AI selalu benar?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-ink-600 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1 text-ink-600 font-body-md text-body-md leading-relaxed border-t border-border/50">
+            Tidak. Sistem mengutamakan kehati-hatian. Jika data belum lengkap atau dokumen agronomi belum terverifikasi, sistem akan meminta klarifikasi atau menyatakan keterbatasan secara terus terang tanpa membuat jawaban spekulatif.
+          </div>
+</div>
+<!-- Item 3 -->
+<div class="rounded-2xl bg-surface-white border border-border overflow-hidden transition-colors">
+<button aria-expanded="false" class="faq-toggle w-full px-6 py-5 flex items-center justify-between gap-4 text-left font-label-lg text-label-lg text-green-900 hover:text-green-700 transition-colors" type="button">
+<span class="">Apakah foto tanaman menghasilkan diagnosis pasti?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-ink-600 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1 text-ink-600 font-body-md text-body-md leading-relaxed border-t border-border/50">
+            Foto tanaman memberikan observasi visual dan langkah pemeriksaan awal yang aman, bukan diagnosis mutlak. Keputusan tindakan lanjutan tetap memerlukan konfirmasi langsung di lapangan.
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="rounded-2xl bg-surface-white border border-border overflow-hidden transition-colors">
+<button aria-expanded="false" class="faq-toggle w-full px-6 py-5 flex items-center justify-between gap-4 text-left font-label-lg text-label-lg text-green-900 hover:text-green-700 transition-colors" type="button">
+<span class="">Apakah data langsung tersimpan saat saya mengetik?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-ink-600 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1 text-ink-600 font-body-md text-body-md leading-relaxed border-t border-border/50">
+            Tidak. Untuk seluruh pencatatan kegiatan dan pengeluaran, sistem menyiapkan draft ringkas dan mewajibkan konfirmasi balasan "YA" dari Anda sebelum data dicatat secara permanen di database.
+          </div>
+</div>
+<!-- Item 5 -->
+<div class="rounded-2xl bg-surface-white border border-border overflow-hidden transition-colors">
+<button aria-expanded="false" class="faq-toggle w-full px-6 py-5 flex items-center justify-between gap-4 text-left font-label-lg text-label-lg text-green-900 hover:text-green-700 transition-colors" type="button">
+<span class="">Apakah AgriSense menyetujui kredit perbankan / KUR?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-ink-600 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-1 text-ink-600 font-body-md text-body-md leading-relaxed border-t border-border/50">
+            Tidak. Pencatatan KUR hanya berfungsi sebagai peninjauan dokumen internal kebun Anda, bukan merupakan persetujuan pinjaman atau pengiriman berkas ke bank penyalur.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- S10: CTA PENUTUP -->
+<section class="w-full bg-surface-white py-space-3xl lg:py-space-4xl">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-lg">
+<div class="relative overflow-hidden rounded-[36px] bg-green-900 text-on-primary px-8 py-16 lg:px-20 lg:py-24 shadow-2xl">
+<!-- Subtle botanical glow overlay -->
+<div aria-hidden="true" class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-green-700/30 blur-3xl pointer-events-none"></div>
+<div aria-hidden="true" class="absolute -left-24 -top-24 w-80 h-80 rounded-full bg-accent-gold/15 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl flex flex-col items-start">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/30 font-label-sm text-label-sm mb-6">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Kanal Resmi Berlisensi</span>
+</div>
+<h2 class="font-display-hero text-headline-lg lg:text-display-hero text-surface-white tracking-tight leading-[1.15] mb-6">
+            Mulai kelola kebun dengan cara yang lebih sederhana.
+          </h2>
+<p class="font-body-lg text-body-md lg:text-body-lg text-surface-variant max-w-2xl mb-10 leading-relaxed">
+            Bergabunglah bersama komunitas petani yang mencatat dan merawat tanaman dengan kepastian data. Bebas biaya pendaftaran dan siap pakai hari ini.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-3 bg-primary-container hover:bg-green-800 text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-xl shadow-green-950/40 hover:-translate-y-0.5" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="">Mulai via WhatsApp</span>
+</a>
+<div class="flex items-center gap-2 text-surface-variant/80 font-body-sm text-body-sm px-2">
+<span class="material-symbols-outlined text-[18px] text-accent-gold">lock</span>
+<span class="">Kanal resmi berlisensi terverifikasi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vanilla Interactive Scripts: Accordion & Dynamic Phone Simulator -->
+<script>
+    // FAQ Accordion
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggles = document.querySelectorAll('.faq-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('.faq-icon');
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+          toggles.forEach(otherToggle => {
+            if (otherToggle !== toggle) {
+              otherToggle.setAttribute('aria-expanded', 'false');
+              otherToggle.nextElementSibling.classList.add('hidden');
+              const otherIcon = otherToggle.querySelector('.faq-icon');
+              if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+            }
+          });
+
+          if (isExpanded) {
+            toggle.setAttribute('aria-expanded', 'false');
+            content.classList.add('hidden');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+          } else {
+            toggle.setAttribute('aria-expanded', 'true');
+            content.classList.remove('hidden');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      // DYNAMIC PHONE SIMULATION ENGINE
+      initPhoneSimulation();
+    });
+
+    function initPhoneSimulation() {
+      const container = document.getElementById('chat-stream-container');
+      const b1 = document.getElementById('step-bubble-1');
+      const bTyping = document.getElementById('step-typing-indicator');
+      const b3 = document.getElementById('step-bubble-3');
+      const b4 = document.getElementById('step-bubble-4');
+      const b5 = document.getElementById('step-bubble-5');
+      const b6User = document.getElementById('step-bubble-6-user');
+      const b6Bot = document.getElementById('step-bubble-6-bot');
+
+      const statusText = document.getElementById('simulation-status-text');
+      const playPauseBtn = document.getElementById('btn-toggle-play');
+      const playPauseIcon = document.getElementById('play-pause-icon');
+      const restartBtn = document.getElementById('btn-restart');
+      const pulseDot = document.getElementById('live-pulse');
+      const phoneSubtitle = document.getElementById('phone-contact-subtitle');
+      const demoBtnYa = document.getElementById('demo-btn-ya');
+
+      let currentStep = 0;
+      let isPaused = false;
+      let timer = null;
+
+      // Check prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function resetAllBubbles() {
+        [b1, bTyping, b3, b4, b5, b6User, b6Bot].forEach(el => {
+          if (el) {
+            el.classList.remove('chat-visible');
+            el.style.display = 'none';
+          }
+        });
+        updateStepBars(0);
+        if (container) container.scrollTop = 0;
+        phoneSubtitle.textContent = 'Online • Asisten Terverifikasi';
+      }
+
+      function updateStepBars(step) {
+        for (let i = 1; i <= 6; i++) {
+          const bar = document.getElementById('step-bar-' + i);
+          if (bar) {
+            if (i <= step) {
+              bar.className = 'h-1.5 rounded-full bg-primary transition-all duration-300';
+            } else {
+              bar.className = 'h-1.5 rounded-full bg-border transition-all duration-300';
+            }
+          }
+        }
+      }
+
+      function scrollToBottom() {
+        if (container) {
+          container.scrollTo({
+            top: container.scrollHeight,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        }
+      }
+
+      function showStep(stepIndex) {
+        currentStep = stepIndex;
+
+        switch (stepIndex) {
+          case 1:
+            // Step 1: Petani tanya + upload foto daun
+            statusText.textContent = 'Langkah 1/6: Petani mengirim foto & keluhan kebun';
+            updateStepBars(1);
+            b1.style.display = 'block';
+            setTimeout(() => { b1.classList.add('chat-visible'); scrollToBottom(); }, 60);
+            phoneSubtitle.textContent = 'Online';
+            scheduleNext(2, 2800);
+            break;
+
+          case 2:
+            // Step 2: Typing indicator AgriSense muncul
+            statusText.textContent = 'Langkah 2/6: AgriSense AI memverifikasi pustaka agronomi...';
+            updateStepBars(2);
+            phoneSubtitle.textContent = 'sedang mengetik...';
+            bTyping.style.display = 'flex';
+            setTimeout(() => { bTyping.classList.add('chat-visible'); scrollToBottom(); }, 60);
+            scheduleNext(3, 2400);
+            break;
+
+          case 3:
+            // Step 3: AgriSense AI memberikan jawaban observasi etis
+            statusText.textContent = 'Langkah 3/6: AI menyajikan observasi beretika & langkah aman';
+            updateStepBars(3);
+            bTyping.classList.remove('chat-visible');
+            bTyping.style.display = 'none';
+            phoneSubtitle.textContent = 'Online • Asisten Terverifikasi';
+            b3.style.display = 'block';
+            setTimeout(() => { b3.classList.add('chat-visible'); scrollToBottom(); }, 60);
+            scheduleNext(4, 4500);
+            break;
+
+          case 4:
+            // Step 4: Petani merespon dengan perintah CATAT
+            statusText.textContent = 'Langkah 4/6: Petani mengetik perintah pencatatan kebun';
+            updateStepBars(4);
+            b4.style.display = 'block';
+            setTimeout(() => { b4.classList.add('chat-visible'); scrollToBottom(); }, 60);
+            scheduleNext(5, 2500);
+            break;
+
+          case 5:
+            // Step 5: AgriSense merangkum draf catatan konfirmasi
+            statusText.textContent = 'Langkah 5/6: AI menyusun draf ringkas & meminta konfirmasi YA';
+            updateStepBars(5);
+            b5.style.display = 'block';
+            setTimeout(() => { b5.classList.add('chat-visible'); scrollToBottom(); }, 60);
+            scheduleNext(6, 4000);
+            break;
+
+          case 6:
+            // Step 6: Petani menekan YA dan muncul notifikasi sukses
+            statusText.textContent = 'Langkah 6/6: Konfirmasi balasan diterima & data tersimpan aman';
+            updateStepBars(6);
+            b6User.style.display = 'block';
+            setTimeout(() => {
+              b6User.classList.add('chat-visible');
+              scrollToBottom();
+              setTimeout(() => {
+                b6Bot.style.display = 'block';
+                b6Bot.classList.add('chat-visible');
+                scrollToBottom();
+                // Schedule loop restart
+                scheduleNext(1, 6000);
+              }, 800);
+            }, 60);
+            break;
+        }
+      }
+
+      function scheduleNext(nextStep, delay) {
+        if (isPaused) return;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          if (!isPaused) {
+            if (nextStep === 1) resetAllBubbles();
+            showStep(nextStep);
+          }
+        }, prefersReducedMotion ? Math.min(delay, 1000) : delay);
+      }
+
+      // Event Listeners for UI Controls
+      playPauseBtn.addEventListener('click', () => {
+        isPaused = !isPaused;
+        if (isPaused) {
+          clearTimeout(timer);
+          playPauseIcon.textContent = 'play_arrow';
+          pulseDot.classList.remove('animate-ping');
+          statusText.textContent = 'Simulasi Dijeda';
+        } else {
+          playPauseIcon.textContent = 'pause';
+          pulseDot.classList.add('animate-ping');
+          showStep(currentStep >= 6 ? 1 : currentStep + 1);
+        }
+      });
+
+      restartBtn.addEventListener('click', () => {
+        clearTimeout(timer);
+        isPaused = false;
+        playPauseIcon.textContent = 'pause';
+        pulseDot.classList.add('animate-ping');
+        resetAllBubbles();
+        showStep(1);
+      });
+
+      if (demoBtnYa) {
+        demoBtnYa.addEventListener('click', () => {
+          if (currentStep === 5) {
+            clearTimeout(timer);
+            showStep(6);
+          }
+        });
+      }
+
+      // Start initial run
+      resetAllBubbles();
+      setTimeout(() => { showStep(1); }, 600);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-white text-ink-900"><div class="max-w-7xl mx-auto px-margin lg:px-margin-lg pt-space-4xl pb-space-2xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-lg pb-space-3xl"><div class="md:col-span-5 space-y-space-md"><div class="flex items-center gap-space-md"><img alt="AgriSense Logo" class="h-11 w-11 rounded-lg object-contain shrink-0 shadow-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7bvQ2Ffi743a4HDa7pCo8kMSAUXMBZDh21kQoknvSp9eLNNjhnOgpCiYkL2rRvN2Kh2TICAt_AFZesafNssuQh-wSOEJq_xWaMjSzR16jhVBgCLXJo4mgNKWx1G0llpX_2r_yCWALmHrdQM335-4ULgZscJtqj62RCJL2joMt94awNlGCXaZ1x3Yi74HonbeBjqDgbCWKZv2M5dLE0EKmfwgnVZpQtN1UpkAYx_kfkSBeiGG-G_o38KyRSv_imwaLzI"><span class="font-headline-sm text-headline-sm text-green-900 tracking-tight">AgriSense</span></div><p class="font-body-md text-body-md text-ink-600 max-w-md">Sahabat bertani digital terpercaya untuk petani Indonesia. Menghubungkan kearifan agrikultur lokal dengan konsultasi WhatsApp cerdas yang mudah diakses.</p><div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-low text-green-800 font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-green-700">verified</span><span class="">Kanal Bantuan Resmi Terverifikasi</span></div></div><div class="md:col-span-3 space-y-space-md"><h3 class="font-label-lg text-label-lg text-green-900">Navigasi Cepat</h3><ul class="space-y-space-xs"><li class="" role="none"><a class="font-body-sm text-body-sm text-ink-600 hover:text-green-700 transition-colors" href="#manfaat">Manfaat Platform</a></li><li class="" role="none"><a class="font-body-sm text-body-sm text-ink-600 hover:text-green-700 transition-colors" href="#tentang">Tentang Kami</a></li><li class="" role="none"><a class="font-body-sm text-body-sm text-ink-600 hover:text-green-700 transition-colors" href="#cara-kerja">Cara Kerja WhatsApp</a></li><li class="" role="none"><a class="font-body-sm text-body-sm text-ink-600 hover:text-green-700 transition-colors" href="#kepercayaan">Bukti &amp; Kepercayaan</a></li><li class="" role="none"><a class="font-body-sm text-body-sm text-ink-600 hover:text-green-700 transition-colors" href="#faq">Pertanyaan Umum (FAQ)</a></li></ul></div><div class="md:col-span-4 space-y-space-md"><h3 class="font-label-lg text-label-lg text-green-900">Keamanan &amp; Privasi</h3><div class="p-space-md rounded-xl bg-green-050 space-y-space-xs"><div class="flex items-center gap-space-xs text-green-800 font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">lock</span><span class="">Data Anda Aman &amp; Terlindungi</span></div><p class="font-body-sm text-body-sm text-ink-600">Percakapan dan identitas pekebun tidak dibagikan kepada pihak ketiga komersial.</p></div><div class="p-space-md rounded-xl bg-surface-container space-y-space-xs"><div class="flex items-center gap-space-xs text-tertiary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">info</span><span class="">Catatan Penting</span></div><p class="font-body-sm text-body-sm text-ink-600">Panduan informasi &amp; pendamping budidaya, bukan pengganti diagnosis ahli langsung di lapangan.</p></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-ink-600 font-body-sm text-body-sm"><p class="">© 2025 AgriSense Nusantara. Seluruh hak cipta dilindungi undang-undang.</p><div class="flex items-center gap-space-lg"><a class="hover:text-green-700 transition-colors" href="#">Kebijakan Privasi</a><a class="hover:text-green-700 transition-colors" href="#">Ketentuan Layanan</a><a class="hover:text-green-700 transition-colors" href="#">Panduan Komunitas</a></div></div></div></footer>
+
+
+
+
+</body></html>
